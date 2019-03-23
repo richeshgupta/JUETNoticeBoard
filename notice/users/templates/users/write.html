@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div.main-head
+		{
+			width:50%;
+			margin-left:23%;
+			border:5px solid grey;
+			text-align:center;
+			border-radius:20px;
+		}
+		div.form
+		{
+			width:16%;
+			display:inline-block;
+			margin-top:5%;
+			margin-left:38%;
+			align-self: center;
+			height:450px;
+			border:2px solid black;
+			padding:50px;
+			padding-top:90px;
+			box-shadow:3px 3px 5px 5px grey;
+			
+		}
+		div.main{
+			margin-left:40%;
+			margin-top:10%;
+			text-align:center;
+			width:350px;
+			height:500px;
+			border:3px solid grey;
+			box-shadow:2px 2px 5px 5px grey;
+		}
+		div.logout-head
+		{
+			padding-top:20%	;
+		}
+		div.sub
+		{
+			padding-top:40%;
+		}
+	</style>
+	<title>Notice</title>
+</head>
+<body>
+	<div class="main-head">
+		<h1>Create Notice</h1>
+	</div>
+	<div class="form">
+	<form method="POST">
+
+			{{ form }}
+			{% csrf_token %}
+	<button type='submit'>Post</button>
+	<div class="sub">
+		<a href="{% url 'home' %}">Go to Home</a>
+		<br /><br />
+		<a href="{% url 'logout' %}">Log Out</a>
+	</div>
+</form>
+</body>
+</html>

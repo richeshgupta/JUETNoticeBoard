@@ -1,0 +1,143 @@
+<!--			hi! you want to learn from our source code? well, you can learn and also contribute, go to https://github.com/richeshgupta/webkiosk/ to contribute and test our project, anyone who will report maximum bug will get Tester shoutout on our contributors section. All the best. Keep grinding and don't copy, create -->
+<!-- Exploitation of bugs are prohibited -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JUET Webkiosk 1.0</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="keywords" content="webkiosk,JUET,Jaypee university of engineering and technology,student project,indian,college">
+	<meta name="description" content="This Websites is an open source project for webkiosk for the college - Jaypee university of engineering and technology, Guna.">
+	<style>
+	 /*				fonts files 							*/
+	 @import url('https://fonts.googleapis.com/css?family=Kanit');
+	 @import url('https://fonts.googleapis.com/css?family=Yellowtail');
+
+
+	body{
+		background: -webkit-linear-gradient(to left, #2980b9, #6dd5fa, #ffffff); 
+  		background: linear-gradient(to left, #2980b9, #6dd5fa, #ffffff); 
+		}
+
+	div.main{
+		background:url('{% static 'back.png' %}');
+		border-radius:20px;
+		background-size: 100%;
+		height:40em;
+		width:90%;
+		margin:auto;
+		margin-top: 50px;
+		display:block;
+		box-shadow: 10px 10px 12px 12px rgb(12,56,77);
+		z-index:-1;
+	}
+	div.container-custom
+	{
+		border-radius:15%;
+		width:100%;
+		height: 780px;
+		margin-top:20px;
+		padding-top: 20px;
+	}
+	div.head
+	{
+		font-family: 'Yellowtail', cursive;
+		text-align: center;
+		padding-top: 20px;
+		color:white;
+		font-size: 4em;
+		display:block;
+		text-shadow: 5px 5px grey;
+		z-index: 1;
+		letter-spacing:3px;
+		transition-property: letter-spacing;
+		transition-duration: 3s;
+	}
+	div.head:hover
+	{
+		letter-spacing: 10px;
+		transition-property: letter-spacing;
+		transition-duration: 3s;
+		-webkit-transition:letter-spacing 3s;
+	}
+	div.header{
+		width:300px;
+		height:300px;
+		border-radius: 10%;
+		color:white;
+    	font-family: 'Kanit', sans-serif;
+    	word-spacing: 2px;
+    	letter-spacing: 2px;
+    	z-index: 1;
+    	text-align:center;
+    	font-size: 1em;
+    	position: absolute;
+		}
+		div.btn
+		{
+			background-color:rgb(12,56,77);
+			color:rgb(23,183,177);
+			width:90px;
+			height:32px;
+			font-size: 1.2em;
+			text-align: center;
+			margin-bottom:10px;
+			margin-left: 100px;
+			box-shadow:2px 2px 3px 3px #28afa6;
+			
+		}
+		div.btn a{
+			text-decoration:none;
+			color:rgb(23,183,177);
+			background-color: rgb(12,56,77);
+
+		}
+		div.btn a:hover{
+			color:rgb(12,56,77);
+			background-color:rgb(23,183,177);
+			transition:background-color 2s;
+		}
+		div.btn:hover{
+			color:rgb(12,56,77);
+			background-color:rgb(23,183,177);
+			transition:background-color 1s;
+			-webkit-transition:background-color 1s;
+		}
+		div.no-extra
+		{
+		text-align: center;
+		padding-top: 70px;
+		color:white;
+		font-size: 4em;
+		display:block;
+		text-shadow: 5px 5px grey;
+		z-index: 1;	
+		}
+		div.container
+		{
+			margin:auto;
+			
+			width:300px;
+		}
+</style>
+</head>
+<body>
+	<div class="container-custom">
+		<div class="main">
+			<div class="container">
+				<div class="no-extra">JUET</div><div class="head"> NoticeBoard</div>
+			
+					
+					<div class="header">
+							<h2>Choose appropriately</h2>
+	
+								<div class="btn"><a href="{% url 'home' %}">Student</a></div>
+								<div class="btn"><a href="{% url 'login' %}">Faculty</a></div>
+					</div>	
+					
+				</div>
+			</div>
+	</div>
+</body>
+</html>

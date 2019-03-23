@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div.main-head
+		{
+			width:50%;
+			margin-left:23%;
+			border:5px solid grey;
+			text-align:center;
+			border-radius:20px;
+		}
+		div.form
+		{
+			width:15%;
+			display:inline-block;
+			margin-top:5%;
+			margin-left:38%;
+			align-self: center;
+			height:350px;
+			border:2px solid black;
+			padding:50px;
+			padding-top:90px;
+			box-shadow:3px 3px 5px 5px grey;
+			
+		}
+	</style>
+	<title>Login</title>
+</head>
+<body>
+	<div class="main-head">
+			<h1>Login</h1>
+	</div>
+<div class="form">
+	<form method ='POST'>
+	{% csrf_token %}
+	{{ form }}
+	<button type="submit">Login</button>
+	</form>
+	<br />
+	<a href="{% url 'home' %}">Home</a>
+</div>
+</body>
+</html>
