@@ -1,6 +1,8 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
 		div.main-head
 		{
@@ -12,12 +14,12 @@
 		}
 		div.form
 		{
-			width:16%;
+			width:25%;
 			display:inline-block;
 			margin-top:5%;
-			margin-left:38%;
+			margin-left:35%;
 			align-self: center;
-			height:450px;
+			height:850px;
 			border:2px solid black;
 			padding:50px;
 			padding-top:90px;
@@ -39,7 +41,7 @@
 		}
 		div.sub
 		{
-			padding-top:40%;
+			padding-top:20%;
 		}
 	</style>
 	<title>Notice</title>
@@ -51,12 +53,12 @@
 	<div class="form">
 	<form method="POST">
 
-			{{ form }}
+			{{ form|crispy }}
 			{% csrf_token %}
 	<button type='submit'>Post</button>
 	<div class="sub">
 		<a href="{% url 'home' %}">Go to Home</a>
-		<br /><br />
+		<br />
 		<a href="{% url 'logout' %}">Log Out</a>
 	</div>
 </form>

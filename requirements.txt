@@ -1,0 +1,2 @@
+django == 2.10
+crispy forms = 1.7.2

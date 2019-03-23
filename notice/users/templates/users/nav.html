@@ -69,6 +69,16 @@
 			margin-left:12%;
 			box-shadow:4px 4px 7px 7px grey;
 		}
+		div.user-name
+		{
+			display:block;
+			float:right;
+			margin-left:50px;
+			border:2px dotted black;
+			width:280px;
+			text-align: center;
+			border-radius:20px;
+		}
 	</style>
 </head>
 <body>
@@ -83,7 +93,14 @@
 				<li><a href="{% url 'login' %}">Login</a></li>
 			{% endif %}
 	</div>
-	
+<div class="user-name">
+	{% if user.is_authenticated %}
+		<h4>Hello, {{ user.username }} </h4>
+	{% else %}
+		<h4>Login to post</h4>
+	{% endif %}
+
+</div>
 	<div class="content">
 		{% block content %}
 		{% endblock content %}
