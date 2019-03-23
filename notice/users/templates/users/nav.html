@@ -1,109 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		div.nav-box
+	<style type="text/css">
+		div.main-container
 		{
-			width:28%;
-			height:100px;
-			background-color:black;
-			color:white;
-			padding:20px;
-			margin-left:35%;
-			box-shadow:5px 5px 7px 7px grey;
-			border-radius:50px;
+			margin: 0;
+			height:45px;
+			background-color:#23843f;
+			width:95%;
+			padding:5px;
+			padding-top:10px;
+			border-radius:8px;
 		}
-		div.nav-box:hover
-		{
-			
-			height:120px;
-			transition: height 2s;
-		}
-		li
+		div.btn
 		{
 			display:inline-block;
-			margin-left:30px;
-			margin-top:10px;
-			width:60px;
-			height: 20px;
+			width:100px;
+			float:left;
+			height:40px;
 			text-align: center;
-			border-radius:3px;
-			padding: 5px;
+			border:1px solid black;
+			border-bottom-width: 5px;
+			border-radius:5px;
+			box-shadow:1px 1px 2px 2px #abf29b;
+			margin:15px;
+			padding-top:8px;
+			margin-top:0px;
 		}
-		li:hover
+		div.btn:hover
 		{
-			color:black;
-			background-color:white;
+
+			background-color:white;	
 			transition:background-color 2s;
 		}
-		div.nav-box > ul
-		{
-			list-style-type: none;
-		}
-		a
-		{
-			text-decoration:none;
-			color:white;
+		a{
+			text-decoration: none;
+			color:#152611;
 		}
 		a:hover
 		{
-			color:black;
+			color:#23843f;
 			transition:color 2s;
 		}
-		div.heading
-		{
-			margin:30px;
-			color:grey;
-			border:2px solid black;
-			border-radius:10px;
-			padding:20px;
-			text-align:center;
-		}
-		div.content{
-			border:2px solid black;
-			border-radius:10px;
-			box-shadow:2px 2px 3px 3px grey;
-			padding:10px;
-			margin-top:150px;
-			width:70%;
-			margin-left:12%;
-			box-shadow:4px 4px 7px 7px grey;
-		}
-		div.user-name
+		div.content
 		{
 			display:block;
-			float:right;
-			margin-left:50px;
-			border:2px dotted black;
-			width:280px;
-			text-align: center;
-			border-radius:20px;
+			width:80%;
+			height:500px;
+			margin-top:8%;
+			margin-left:5%;
+			border:3px solid black;
+			border-radius:10px;
+			padding:10px;
+			padding-left:50px;
 		}
 	</style>
 </head>
 <body>
-	<div class="nav-box">
-		<ul>
-			<li><a href="{% url 'home' %}">Home</a></li>
-			<li><a href="{% url 'notice' %}">Post</a></li>
-			<li><a href="{% url 'menu' %}">Menu</a></li>
+<div class="main-container">
+	
+			<div class="btn"><a href="{% url 'home' %}">Home</a></div>
+			<div class="btn"><a href="{% url 'menu' %}">Menu</a></div>
+			<div class="btn"><a href="{% url 'notice' %}">Post</a></div>
 			{% if user.is_authenticated %}
-				<li><a href="{% url 'logout' %}">Logout</a></li>
+				<div class="btn"><a href="{% url 'logout' %}">Logout</a></div>
 			{% else %}
-				<li><a href="{% url 'login' %}">Login</a></li>
+				<div class="btn"><a href="{% url 'login' %}">Login</a></div>
 			{% endif %}
-	</div>
-<div class="user-name">
-	{% if user.is_authenticated %}
-		<h4>Hello, {{ user.username }} </h4>
-	{% else %}
-		<h4>Login to post</h4>
-	{% endif %}
-
+	
 </div>
-	<div class="content">
-		{% block content %}
-		{% endblock content %}
-	</div>
+<div class="content">
+{% block content %}
+{% endblock content %}
+</div>
 </body>
 </html>

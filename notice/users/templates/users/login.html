@@ -1,10 +1,6 @@
-{% load crispy_forms_tags %}
-
 <!DOCTYPE html>
 <html>
 <head>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 	<style type="text/css">
 		div.main-head
 		{
@@ -16,12 +12,12 @@
 		}
 		div.form
 		{
-			width:25%;
+			width:15%;
 			display:inline-block;
 			margin-top:5%;
 			margin-left:38%;
 			align-self: center;
-			height:650px;
+			height:350px;
 			border:2px solid black;
 			padding:50px;
 			padding-top:90px;
@@ -38,7 +34,7 @@
 <div class="form">
 	<form method ='POST'>
 	{% csrf_token %}
-	{{ form|crispy }}
+	{{ form }}
 	<button type="submit">Login</button>
 	</form>
 	<br />
