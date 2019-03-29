@@ -3,7 +3,7 @@
 	{% if user.is_authenticated %}
 		<h4>Welcome, {{ request.user }} </h4>
 	{% else %}
-		<h4>Log in to post</h4>
+		<h4><a href="{% url 'login' %}">Log in</a> to post</h4>
 	{% endif %}
 {% endblock logbox %}
 {% block content %}
@@ -19,6 +19,6 @@
 			<br /><hr /><br />
 		{% endfor %}
 	{% else %}
-		<h1>No Notices to show </h1>
+		<h1>Nothing to show </h1>
 	{% endif %}
 {% endblock content %}
