@@ -14,7 +14,7 @@
 			<br />
 			<p>{{ datas.notice }}</p>
 				{% if datas.url %}
-					<br /><h5>URL - </h5> {{ datas.url }}
+					<br /><h5>URL - </h5> <a href={{ datas.url }} target=_blank>{{ datas.url }}</a>
 				{% endif %}
 			<br /><hr /><br />
 		{% endfor %}
