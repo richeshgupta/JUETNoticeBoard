@@ -7,11 +7,18 @@
 	{% endif %}
 {% endblock logbox %}
 {% block content %}
-	{% for datas in data %}
-		<h1>{{ datas.title }}</h1>
-		<h4>{{ datas.date }}</h4>
-		<br />
-		<p>{{ datas.notice }}</p>
-		<br /><hr /><br />
-	{% endfor %}
+	{% if data %}	
+		{% for datas in data %}
+			<h1>{{ datas.title }}</h1>
+			<h4>{{ datas.date }}</h4>
+			<br />
+			<p>{{ datas.notice }}</p>
+				{% if datas.url %}
+					<br /><h5>URL - </h5> {{ datas.url }}
+				{% endif %}
+			<br /><hr /><br />
+		{% endfor %}
+	{% else %}
+		<h1>No Notices to show </h1>
+	{% endif %}
 {% endblock content %}

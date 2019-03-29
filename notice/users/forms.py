@@ -5,5 +5,5 @@ from .models import NoticeBoard
 class Notice_board_class(forms.ModelForm):
 	class Meta: 
 		model = NoticeBoard
-		fields= ['title','notice','date',]
+		fields= ['title','notice','date','url']
 
