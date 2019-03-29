@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-	data = NoticeBoard.objects.all()
+	data = NoticeBoard.objects.all().order_by('-date')
 	return render(request,'users/index.html',{'data':data})
 
 
