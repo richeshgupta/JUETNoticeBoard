@@ -1,4 +1,11 @@
 {% extends 'users/nav.html' %}
+{% block logbox %}
+	{% if user.is_authenticated %}
+		<h4>Welcome, {{ request.user }} </h4>
+	{% else %}
+		<h4>Log in to post</h4>
+	{% endif %}
+{% endblock logbox %}
 {% block content %}
 	{% for datas in data %}
 		<h1>{{ datas.title }}</h1>
@@ -6,6 +13,5 @@
 		<br />
 		<p>{{ datas.notice }}</p>
 		<br /><hr /><br />
-
 	{% endfor %}
 {% endblock content %}

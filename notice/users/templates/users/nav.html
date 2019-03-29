@@ -46,7 +46,7 @@
 		{
 			display:block;
 			width:80%;
-			height:500px;
+			/*height:500px;*/
 			margin-top:8%;
 			margin-left:5%;
 			border:3px solid black;
@@ -54,18 +54,33 @@
 			padding:10px;
 			padding-left:50px;
 		}
+		div.logbox
+		{
+			width:350px;
+			height:50px;
+			border:3px dashed black;
+			float:right;
+			border-radius:4px;
+			margin-top:7%;
+			text-align:center;		
+			padding-bottom:2px;
+		}
 	</style>
 </head>
 <body>
+	<div class="logbox">
+		{% block logbox %}
+		{% endblock %}
+	</div>
 <div class="main-container">
 	
-			<div class="btn"><a href="{% url 'home' %}">Home</a></div>
-			<div class="btn"><a href="{% url 'menu' %}">Menu</a></div>
-			<div class="btn"><a href="{% url 'notice' %}">Post</a></div>
+			<div class="btn"><a href="{% url 'home' %}" title="Home Page">Home</a></div>
+			<div class="btn"><a href="{% url 'menu' %}" title="Menu Page">Menu</a></div>
+			<div class="btn"><a href="{% url 'notice' %}" title="Notice post form">Post</a></div>
 			{% if user.is_authenticated %}
-				<div class="btn"><a href="{% url 'logout' %}">Logout</a></div>
+				<div class="btn"><a href="{% url 'logout' %}" title="logout">Logout</a></div>
 			{% else %}
-				<div class="btn"><a href="{% url 'login' %}">Login</a></div>
+				<div class="btn"><a href="{% url 'login' %}" title="login">Login</a></div>
 			{% endif %}
 	
 </div>
