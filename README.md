@@ -1,7 +1,7 @@
 # Why?
-	Because, our professors were having a hard time to convey messages as some students were not on whatsapp and some were not on Facebook
+	We are studying in a university so our teachers needed to distribute us study materials and inform us regarding classes. A Class Representative was made so that he can inform everyone about the class timmings. There was a lot of information lost in conveying the message. So, we tried to make a portal so that this problem could be overcome and the teacher could directly inform everyone. 
 # How?
 	On django 2.0,  after learning a little coding. I thought let's try if i can make something quickly.
 
 # How Much time did it took?
-	Just a day!
+	We are still working on the project. It is under development phase.
