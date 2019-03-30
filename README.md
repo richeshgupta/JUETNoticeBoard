@@ -5,3 +5,6 @@
 
 # How Much time did it took?
 	We are still working on the project. It is under development phase.
+
+# Who are we?
+	We are Pantomath. We want to create projects to solve daily life problems
