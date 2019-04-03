@@ -1,9 +1,10 @@
 {% extends 'users/nav.html' %}
+
 {% block logbox %}
 	{% if user.is_authenticated %}
 		<h4>Welcome, {{ request.user }} </h4>
 	{% else %}
-		<h4><a href="{% url 'login' %}">Log in</a> to post</h4>
+		<h4><a href="{% url 'login' %}" id="log">Log in</a> to post</h4>
 	{% endif %}
 {% endblock logbox %}
 {% block content %}
@@ -14,7 +15,7 @@
 			<br />
 			<p>{{ datas.notice }}</p>
 				{% if datas.url %}
-					<br /><h5>URL - </h5> <a href={{ datas.url }} target=_blank>{{ datas.url }}</a>
+					<br /><h5>URL - </h5> <a id="url-box" href={{ datas.url }} target=_blank>{{ datas.url }}</a>
 				{% endif %}
 			<br /><hr /><br />
 		{% endfor %}

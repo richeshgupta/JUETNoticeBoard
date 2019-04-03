@@ -34,17 +34,18 @@
 			transition:background-color 2s;
 			transform:rotate(20deg);
 		}
-		a{
+		a#log{
 			text-decoration: none;
 			color:#b3efe6;
 		}
-		a:hover
+		a#log:hover
 		{
 			color:#23843f;
 			transition:color 2s;
 		}
 		div.content
 		{
+			background:#b8f2d0;
 			display:block;
 			width:80%;
 			/*height:500px;*/
@@ -56,17 +57,23 @@
 			padding-left:50px;
 			box-shadow:2px 2px 5px 5px grey;
 		}
-		div.content > a
-		{
-			color:red;
-			text-decoration:overline;
-			letter-spacing: 2px;
+		a#normal{
+			color:white;
+			display:inline-block;
+			text-decoration:none;
+			margin-left:20px;
+			margin-top:10px;
+			border:2px solid #42a561;
+			width:80px;
+			height:33px;
+			border-bottom-width: 20px;
+			text-align: center;
+			padding-top:5px;
+			border-radius:20px;
+			box-shadow:2px 2px 3px 3px #76db96;
 		}
-		div.content > a:hover
-		{
-			color:blue;
-			transition:color 2s;
-		}
+		a#normal:hover
+		{ 		}
 		div.logbox
 		{
 			width:350px;
@@ -81,6 +88,12 @@
 			display:block;
 			box-shadow:2px 2px 3px 3px grey;
 		}
+		a#url-box
+		{
+			text-decoration:overline;
+			letter-spacing: 2px;
+			color:red;
+		}
 	</style>
 </head>
 <body>
@@ -89,14 +102,14 @@
 		{% endblock %}
 	</div>
 <div class="main-container">
-	
-			<div class="btn"><a href="{% url 'home' %}" title="Home Page">Home</a></div>
-			<div class="btn"><a href="{% url 'menu' %}" title="Menu Page">Menu</a></div>
-			<div class="btn"><a href="{% url 'notice' %}" title="Notice post form">Post</a></div>
+			
+			<a id="normal" href="{% url 'home' %}" title="Home Page" class="link">Home</a>
+			<a id="normal" href="{% url 'menu' %}" title="Menu Page">Menu</a>
+			<a id="normal" href="{% url 'notice' %}" title="Notice post form">Post</a>
 			{% if user.is_authenticated %}
-				<div class="btn"><a href="{% url 'logout' %}" title="logout">Logout</a></div>
+				<a id="normal" href="{% url 'logout' %}" title="logout">Logout</a>
 			{% else %}
-				<div class="btn"><a href="{% url 'login' %}" title="login">Login</a></div>
+				<a id="normal" href="{% url 'login' %}" title="login">Login</a>
 			{% endif %}
 	
 </div>
