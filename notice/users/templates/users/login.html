@@ -8,43 +8,48 @@
 		{
 			width:50%;
 			margin-left:23%;
+			margin-top:2%;
 			border:5px solid grey;
 			text-align:center;
 			border-radius:20px;
 		}
 		div.form
 		{
-			width:19%;
+			width:30%;
 			display:inline-block;
 			margin-top:5%;
-			margin-left:38%;
+			margin-left:32%;
+			text-align:center;
 			align-self: center;
-			height:650px;
+			height:370px;
 			border:2px solid black;
 			padding:50px;
 			padding-top:90px;
 			box-shadow:3px 3px 5px 5px grey;
 			
 		}
+		h1
+		{
+			display:block;
+
+		}
 	</style>
 	<title>Login</title>
 </head>
 <body>
-	{% if user.is_authenticated %}
+	{% if not user.is_authenticated %}
 		
 	
-		<div class="main-head">
-				<h1>Login</h1>
 				<div class="main-head">
 			<h1>Already Logged in</h1>
 		</div>
 		<div class="form">
-			Please <a href="{% url 'notice' %}">Write a post</a><br/>
+			Please <a href="{% url 'notice' %}">Write a post</a><br/><br />
 					<h3>Or</h3><br />
-					go <a href="{% url 'home' %}">Home</a>
+					Go <a href="{% url 'home' %}">Home</a>
 		</div>
 		</div>
-		{% else %}
+	{% else %}
 		<div class="form">
 		<form method ='POST'>
 		{% csrf_token %}
