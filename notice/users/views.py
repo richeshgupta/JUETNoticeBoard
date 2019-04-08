@@ -3,12 +3,18 @@ from django.http import HttpResponse
 from .forms import Notice_board_class as NoticeBoardForm
 from .models import NoticeBoard
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView,DetailView
 
+#Index page
+class index_list(ListView):
+	model = NoticeBoard
+	template_name = 'users/index.html'
+	context_object_name = 'data'
+	ordering = ['-date']
 
-
-def index(request):
-	data = NoticeBoard.objects.all().order_by('-date')
-	return render(request,'users/index.html',{'data':data})
+#detail notice page
+class notice_detail(DetailView):
+	model = NoticeBoard
 
 
 @login_required(login_url='not_logged_in')

@@ -10,7 +10,7 @@
 {% block content %}
 	{% if data %}	
 		{% for datas in data %}
-			<h1>{{ datas.title }}</h1>
+			<a href="{% url 'notice_detail' datas.id %}"><h1>{{ datas.title }}</h1></a>
 			<h4>{{ datas.date }}</h4>
 			<br />
 			<p>{{ datas.notice }}</p>
