@@ -19,9 +19,8 @@ class notice_detail(DetailView):
 class PostCreate(CreateView):
 	model = NoticeBoard
 	fields= ['title','notice','date','url']
-	
 	def form_valid(self,NoticeBoardForm):
-		form.instance.author = self.request.user
+		NoticeBoardForm.instance.author = self.request.user
 		return super().form_valid(NoticeBoardForm)
 
 

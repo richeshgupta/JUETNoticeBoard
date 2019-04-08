@@ -11,7 +11,8 @@
 	{% if data %}	
 		{% for datas in data %}
 			<a id="title" href="{% url 'notice_detail' datas.id %}"><h1>{{ datas.title }}</h1></a>
-			<h4>{{ datas.date }}</h4><br /><hr >
+			<h4 id="author">Writen By - {{ datas.author }}</h4>
+			<h4>{{ datas.date }}</h4> <br /><hr >
 		{% endfor %}
 	{% else %}
 		<h1>Nothing to show </h1>
