@@ -2,8 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import Notice_board_class as NoticeBoardForm
 from .models import NoticeBoard
-from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView,DetailView,CreateView
+from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 
 #Index page
 class index_list(ListView):
@@ -16,24 +16,40 @@ class index_list(ListView):
 class notice_detail(DetailView):
 	model = NoticeBoard
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin,CreateView):
 	model = NoticeBoard
 	fields= ['title','notice','date','url']
+	context_object_name = 'form'
 	def form_valid(self,NoticeBoardForm):
 		NoticeBoardForm.instance.author = self.request.user
 		return super().form_valid(NoticeBoardForm)
 
+#updating code
+class PostUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+	model = NoticeBoard
+	fields= ['title','notice','date','url']
+	context_object_name = 'form'
+	def form_valid(self,NoticeBoardForm):
+		NoticeBoardForm.instance.author = self.request.user
+		return super().form_valid(NoticeBoardForm)
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author:
+			return True
+		else:
+			return False
 
-@login_required(login_url='not_logged_in')
-def post(request):	
-	form = NoticeBoardForm(request.POST)
-	if form.is_valid():
-		form.save()
-		NoticeBoardForm()
-	else:
-		form = NoticeBoardForm()
-	context = {'form':form}
-	return render(request,'users/write.html',context)
+#deleting post
+class notice_delete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+	model = NoticeBoard
+	success_url = 'home/'
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author:
+			return True
+		else:
+			return False
+
 
 def not_logged_in(request):
 	return render(request,'users/not_logged_in.html',{})

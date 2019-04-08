@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	{% block title %}
 	<title>{{ object.title }}</title>
+	{% endblock title %}
 	<style>
 		div.header
 		{
@@ -14,11 +16,28 @@
 			border-radius:10px;
 			margin-left:100px;
 		}
+		div.header#delete
+		{
+			display:block;
+			padding-left:150px;
+			background-color:rgb(23,183,177);
+			color:rgb(12,56,77);
+			width:74.5%;
+			height:75px;
+			border-radius:10px;
+			margin-left:100px;
+		}
 		.heading
 		{
 			width:20%;
 			font-weight:bolder;
 			font-size:2em;
+		}
+		.heading#delete
+		{
+			width:20%;
+			font-weight:bolder;
+			font-size:1.5em;
 		}
 		div.content-box
 		{
@@ -81,13 +100,29 @@
 			float:right;
 			padding-right:100px;
 		}
+		div.update-delete
+		{
+			width:10%;
+			background-color:rgb(23,183,177);
+			margin-top:-250px;
+			border-radius:10px;
+			margin-left:75%;
+			padding-left:25px;
+
+		}
+		div#btn-up
+		{
+			display: inline-block;
+		}
 	</style>
 </head>
 <body>
-<div class="header">
-	<h1 class="heading"> {{ object.title }}</h1>
-	<h3 class="date"> {{ object.date }}</h3>
-</div>
+	{% block header %}
+		<div class="header">
+			<h1 class="heading"> {{ object.title }}</h1>
+			<h3 class="date"> {{ object.date }}</h3>
+		</div>
+	{% endblock header %}
 <div class="navigation">
 	<ul>
 						<h5>Navigation Panel</h5>
@@ -101,18 +136,27 @@
 			{% endif %}
 	</ul>
 </div>
-<div class="content-box">
-	<p class="content">{{ object.notice }}</p>
-	
-	{% if object.url %}
-		<br /><hr /><br />
-		<a href={{ object.url }} target="_blank"><h4>{{ object.url }}</h4></a>
+{% block content-box %}
+	<div class="content-box">
+		<p class="content">{{ object.notice }}</p>
 		
+		{% if object.url %}
+			<br /><hr /><br />
+			<a href={{ object.url }} target="_blank"><h4>{{ object.url }}</h4></a>
+		{% endif %}
+	</div>
+
+	{% if object.author == user %}
+		<div class="update-delete">
+			<div id="btn-up"><a href="{% url 'notice_update' object.id  %}">Update</a></div>
+			<div id="btn-del"><a href="{% url 'notice_delete' object.id %}">Delete</a></div>
+		</div>
 	{% endif %}
-</div>
+{% endblock content-box %}
+{% block footer %}
 <div class="footer">
 	Created with &#10084; in <a href="https://www.juet.ac.in/" target="_blank" alt="Jaypee University of Engineering and Technology">JUET,Guna</a><span class="cred">By Pantomath</span>
 </div>
-	
+{% endblock footer %}	
 </body>
 </html>

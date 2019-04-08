@@ -1,0 +1,25 @@
+
+{% extends 'users/noticeboard_detail.html' %}
+{% load crispy_forms_tags %}
+
+	{% block title %}
+	<title>Delete {{ object.title }} ?</title>
+	{% endblock title %}
+{% block header %}
+	<div class="header" id="delete">
+		<h1 class="heading" id="delete">Do you want to delete {{ object.title }} ?</h1>
+	</div>	
+{% endblock header %}
+{% block content-box %}
+	<div class="content-box">
+		<div class="content">
+			<h2>Do you want to delete {{ object.notice }} ?</h2>
+		</div>
+	<form method="POST">
+
+			{{ form|crispy }}
+			{% csrf_token %}
+	<button type='submit'>Yes</button>
+	</form>
+	<a href="{% url 'notice_detail' object.id %}"><h1>No</h1></a>
+{% endblock content-box %}

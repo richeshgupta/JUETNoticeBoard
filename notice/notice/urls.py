@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
-from users.views import post,menu,not_logged_in,index_list,notice_detail,PostCreate
+from users.views import menu,not_logged_in,index_list,notice_detail,PostCreate,PostUpdate,notice_delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('home/',index_list.as_view(),name='home'),
     path('not_logged_in/',not_logged_in,name='not_logged_in'),
     path('route/<int:pk>/',notice_detail.as_view(),name="notice_detail"),
+    path('route/<int:pk>/update/',PostUpdate.as_view(),name="notice_update"),
+    path('route/<int:pk>/delete/',notice_delete.as_view(),name="notice_delete"),
 ]

@@ -122,8 +122,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = 'notice'
-
+LOGIN_REDIRECT_URL  = 'notice'
+LOGIN_URL           =  'login'
 EMAIL_HOST          = 'smtp.gmail.com'
 EMAIL_PORT          =  587
 EMAIL_HOST_USER     = 'pantomath.notice@gmail.com'
