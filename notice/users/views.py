@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import Notice_board_class as NoticeBoardForm
 from .models import NoticeBoard
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView,DetailView,CreateView
 
 #Index page
 class index_list(ListView):
@@ -15,6 +15,14 @@ class index_list(ListView):
 #detail notice page
 class notice_detail(DetailView):
 	model = NoticeBoard
+
+class PostCreate(CreateView):
+	model = NoticeBoard
+	fields= ['title','notice','date','url']
+	
+	def form_valid(self,NoticeBoardForm):
+		form.instance.author = self.request.user
+		return super().form_valid(NoticeBoardForm)
 
 
 @login_required(login_url='not_logged_in')
