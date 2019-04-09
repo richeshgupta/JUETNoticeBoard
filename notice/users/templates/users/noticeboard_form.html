@@ -56,6 +56,7 @@
 			{{ form|crispy }}
 			{% csrf_token %}
 	<button type='submit'>Post</button>
+	<a href="{% url 'send_email' %}">send email</a>
 	<div class="sub">
 		<a href="{% url 'home' %}">Go to Home</a>
 		<br />
