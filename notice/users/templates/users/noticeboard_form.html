@@ -51,12 +51,11 @@
 		<h1>Create Notice</h1>
 	</div>
 	<div class="form">
-	<form method="POST">
+	<form method="POST" id="form">
 
 			{{ form|crispy }}
 			{% csrf_token %}
-	<button type='submit'>Post</button>
-	<a href="{% url 'send_email' %}">send email</a>
+			<a  onclick="document.getElementById('form').submit();" href="{% url 'send_email' %}">Post</a>
 	<div class="sub">
 		<a href="{% url 'home' %}">Go to Home</a>
 		<br />
