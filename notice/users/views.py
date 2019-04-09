@@ -42,14 +42,13 @@ class PostUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 #deleting post
 class notice_delete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 	model = NoticeBoard
-	success_url = 'home/'
+	success_url = '/home/'
 	def test_func(self):
 		test_case = self.get_object()
 		if self.request.user == test_case.author:
 			return True
 		else:
 			return False
-
 
 def not_logged_in(request):
 	return render(request,'users/not_logged_in.html',{})

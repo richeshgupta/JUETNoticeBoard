@@ -5,6 +5,10 @@
 	<title>{{ object.title }}</title>
 	{% endblock title %}
 	<style>
+		.author
+		{
+			float:right;
+		}
 		div.header
 		{
 			display:block;
@@ -163,6 +167,7 @@
 {% block content-box %}
 	<div class="content-box">
 		<p class="content">{{ object.notice }}</p>
+		<h3 class="author">Written By- {{ object.author }}</h3>
 		
 		{% if object.url %}
 			<br /><hr /><br />
@@ -179,7 +184,7 @@
 {% endblock content-box %}
 {% block footer %}
 <div class="footer">
-	Created with &#10084; in <a href="https://www.juet.ac.in/" target="_blank" alt="Jaypee University of Engineering and Technology">JUET,Guna</a><span class="cred">By Pantomath</span>
+	Created with &#10084; in <a href="https://www.juet.ac.in/" target="_blank" alt="Jaypee University of Engineering and Technology">JUET,Guna</a><span class="cred">A Project By Pantomath</span>
 </div>
 {% endblock footer %}	
 </body>
