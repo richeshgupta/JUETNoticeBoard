@@ -4,7 +4,7 @@ from .forms import Notice_board_class as NoticeBoardForm
 from .models import NoticeBoard
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
-
+from send.views import index_mail
 #Index page
 class index_list(ListView):
 	model = NoticeBoard
