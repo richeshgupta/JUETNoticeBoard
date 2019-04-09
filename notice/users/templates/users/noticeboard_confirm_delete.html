@@ -15,11 +15,14 @@
 		<div class="content">
 			<h2>Do you want to delete {{ object.notice }} ?</h2>
 		</div>
-	<form method="POST">
+	<form method="POST" id="delete-form">
 
 			{{ form|crispy }}
 			{% csrf_token %}
-	<button type='submit'>Yes</button>
+	 <div class="btn">
+	 <a href="javascript:{}" id="btn-Yes" onclick="document.getElementById('delete-form').submit();">Yes</a>
 	</form>
-	<a href="{% url 'notice_detail' object.id %}"><h1>No</h1></a>
+	<a id="btn-No" href="{% url 'notice_detail' object.id %}"><h1>No</h1></a>
+	</div>
+</div>
 {% endblock content-box %}
