@@ -54,5 +54,9 @@ class notice_delete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 def not_logged_in(request):
 	return render(request,'users/not_logged_in.html',{})
+
 def menu(request):
 	return render(request,'users/initial.html',{})
+	
+def about(request):
+	return render(request,'users/about.html',{})

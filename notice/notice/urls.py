@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
 from users.views import menu,not_logged_in,index_list,notice_detail,PostCreate,PostUpdate,notice_delete
-
+from users.views import about
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',menu,name='menu'),
@@ -30,4 +30,5 @@ urlpatterns = [
     path('route/<int:pk>/update/',PostUpdate.as_view(),name="notice_update"),
     path('route/<int:pk>/delete/',notice_delete.as_view(),name="notice_delete"),
     path('/send/',include('send.urls')),
+    path('about/',about,name='about'),
 ]
