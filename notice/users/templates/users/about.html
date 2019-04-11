@@ -36,10 +36,11 @@
 		}
 		div.profile-container
 		{
-			width:85%;
+			width:40%;
 			height:700px;
 			margin-top:150px;
-			margin-left:60px;
+			display:inline-block;
+			margin-left:75px;
 		}
 		img#profile
 		{
@@ -48,7 +49,7 @@
 			border-radius:100%;
 			border:5px solid white;
 			margin-top:70px;
-			margin-left:620px;
+			margin-left:200px;
 			
 		}
 		img#profile:hover
@@ -67,13 +68,17 @@
 			color:white;
 			text-align: center;
 		}
-		div.links
+		h2#name
 		{
+			font-size: 2em;
+		}
+		div.links
+		{ 
     		font-family: 'Satisfy', cursive;
 		    color:white;
 		    font-size:5em;
-		    width:20%;
-		    margin-left:700px;
+		    width:35%;
+		    margin-left:250px;
 		}
 		a:hover
 		{
@@ -105,7 +110,7 @@
 <h1>We are PantoMath</h1>
 <div class="profile-container">
 
-<h2>Richesh Gupta</h2>
+<h2 id="name">Richesh Gupta</h2>
 	<div class="profile-img">
 		<img id="profile" src='{% static "richesh.png" %}'/>
 	</div>		
@@ -117,11 +122,11 @@
 </div>
 <div class="profile-container">
 
-<h2>Satyam Upadhyay</h2>
+<h2 id="name">Satyam Upadhyay</h2>
 	<div class="profile-img">
 		<img id="profile" src='{% static "satyam.jpg" %}'/>
 	</div>		
-	<h3>Security Analyst</h3>
+	<h3>Backend Developer</h3>
 <div class="links">
 	<a href="https://github.com/satyam260" target="_blank" alt="Satyam - GIT"><img src="{% static 'github.png' %}" width="110px" height="110px"></a>
 	<a href="https://www.linkedin.com/in/satyam-upadhyay-1776a2172/" target="_blank" alt="Satyam - LinkedIn"><img src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" /></a>
