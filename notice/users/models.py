@@ -10,6 +10,7 @@ class NoticeBoard(models.Model):
 	notice = models.TextField(max_length=1000,default='',unique = True)
 	date = models.DateTimeField(default = timezone.now)
 	url = models.URLField(max_length=100,blank = True)
+	docs = models.FileField(upload_to='docs',blank=True)
 
 	def __str__(self):
 		return self.title

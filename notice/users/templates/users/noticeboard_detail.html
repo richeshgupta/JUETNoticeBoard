@@ -167,6 +167,7 @@
 {% block content-box %}
 	<div class="content-box">
 		<p class="content">{{ object.notice }}</p>
+		<a href='{{ object.docs.url }}'>Attachment</a>
 		<h3 class="author">Written By- {{ object.author }}</h3>
 		
 		{% if object.url %}
