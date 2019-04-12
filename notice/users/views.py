@@ -5,6 +5,8 @@ from .models import NoticeBoard
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.core.mail import send_mail
+
+
 #Index page
 class index_list(ListView):
 	model = NoticeBoard
@@ -18,7 +20,7 @@ class notice_detail(DetailView):
 
 class PostCreate(LoginRequiredMixin,CreateView):
 	model = NoticeBoard
-	fields= ['title','notice','date','url']
+	fields= ['title','notice','date','url','docs']
 	context_object_name = 'form'
 	def form_valid(self,NoticeBoardForm):
 		NoticeBoardForm.instance.author = self.request.user

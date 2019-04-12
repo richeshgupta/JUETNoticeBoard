@@ -51,7 +51,7 @@
 		<h1>Create Notice</h1>
 	</div>
 	<div class="form">
-	<form method="POST">
+	<form method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{ form|crispy }}
 			

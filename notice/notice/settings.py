@@ -117,13 +117,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Crispy Template Pack
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+#Media File Settings
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
 MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+#Email - Integration
 STATIC_URL          = '/static/'
 LOGIN_REDIRECT_URL  = 'notice'
 LOGIN_URL           =  'login'
