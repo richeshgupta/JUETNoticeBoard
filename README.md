@@ -8,7 +8,9 @@ We, the Pantomath, have created this project to solve a real-life problem of our
  
 ## Requirements 
 Django 	 	 = 2.0.7
-Python 	 	 = 3.6 
+
+Python 	 	 = 3.6
+ 
 Crispy Forms = 1.1.0
 
 
