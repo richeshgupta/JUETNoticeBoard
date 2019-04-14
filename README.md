@@ -1,12 +1,16 @@
-# Why?
-	We are studying in a university so our teachers needed to distribute us study materials and inform us regarding classes. A Class Representative was made so that he can inform everyone about the class timmings. There was a lot of information lost in conveying the message. So, we tried to make a portal so that this problem could be overcome and the teacher could directly inform everyone. 
-# How?
-	On django 2.0.7,  after learning a little coding. I thought let's try if we can make something quickly.
+##About Project
 
-# How Much time did it took?
-	We are still working on the project. It is under development phase.
+	We, the Pantomath, have created this project to solve a real-life problem of our faculty members of conveying information to the students. If any teacher wanted to convey any message to any batch then they first had to tell it to the Class Representative (CR) and then the CR would further convey it to the batch students. In this process there is a lot of information gap that leads to wrong analysis of the information. So, with our little knowledge about Web Development we tried to create one stop for students and faculty members that would let teachers directly post about anything and the students could get the information directly from here. The post would include: 
+		**TITLE**	: Title of the Post (Required)
+		**CONTENT**	: All information about the post (Required)
+		**DATE**	: Date and time of the post 
+		**URL**		: To provide any link to website (Optional)
+		**DOCS**	: To provide any study material (Optional)
+ 
+##Requirements 
+	Django 	 	 = 2.0.7
+	Python 	 	 = 3.6 
+	Crispy Forms = 1.1.0
 
-# Aim
-	Our current aim is to particicpate in our universities Tech Fest "Tachyon" but our future plan is to build a full fletched webiste. We are planning to add few more functionalitites to our project.
 
-# Vision 
+
