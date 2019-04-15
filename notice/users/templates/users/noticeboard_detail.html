@@ -65,7 +65,6 @@
 		a:hover
 		{
 			color:white;
-
 		}
 		div.navigation
 		{
@@ -90,14 +89,12 @@
 		li
 		{
 			list-style-type: none;
-
 		}
 		hr
 		{
 			width:20%;
 			color:white;
 			margin-left:0px;
-
 		}
 		span.cred
 		{
@@ -112,7 +109,6 @@
 			border-radius:10px;
 			margin-left:75%;
 			padding-left:25px;
-
 		}
 		div#btn-up
 		{
@@ -167,8 +163,10 @@
 {% block content-box %}
 	<div class="content-box">
 		<p class="content">{{ object.notice }}</p>
-		<a href='{{ object.docs.url }}'>Attachment</a>
-		<h3 class="author">Written By- {{ object.author }}</h3>
+		{% if object.docs %}
+			<a href='{{ object.docs.url }}'>Attachment</a>
+		{% endif %}
+		<h3 class="author">Posted By- <u>{{ object.author }}</u></h3>
 		
 		{% if object.url %}
 			<br /><hr /><br />
