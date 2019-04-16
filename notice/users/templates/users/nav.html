@@ -4,6 +4,9 @@
 	{% block title %}
 	{% endblock title %}
 	<style type="text/css">
+		body
+		{
+		}
 		div.main-container
 		{
 			margin: 0;
@@ -13,6 +16,15 @@
 			padding:5px;
 			padding-top:10px;
 			border-radius:8px;
+		}
+		a#pantomath
+		{
+			color:white;
+			text-decoration: none;
+		}
+		a#pantomath:hover
+		{
+			text-decoration:underline;
 		}
 		hr
 		{
@@ -80,8 +92,10 @@
 			border-radius:20px;
 			box-shadow:2px 2px 3px 3px #76db96;
 		}
-		h4#author
-		{}
+		h4#log-box
+		{
+			color:white;
+		}
 		a#normal:hover
 		{ 		}
 		div.logbox
@@ -91,7 +105,7 @@
 			border:3px dashed black;
 			float:right;
 			border-radius:4px;
-			margin-top:5%;
+			margin-top:6%;
 			margin-right:5%;
 			text-align:center;		
 			padding-bottom:2px;
@@ -118,6 +132,23 @@
 			text-decoration-color: rgb(12,56,77);
 			
 		}
+		a#special
+		{
+			margin-right:-300px;
+			color:white;
+			float:right;
+			display:inline-block;
+			text-decoration:none;
+			margin-top:10px;
+			border:2px solid #42a561;
+			width:80px;
+			height:33px;
+			border-bottom-width: 20px;
+			text-align: center;
+			padding-top:5px;
+			border-radius:20px;
+			box-shadow:2px 2px 3px 3px #76db96;
+		}
 	</style>
 </head>
 <body>
@@ -135,11 +166,15 @@
 			{% else %}
 				<a id="normal" href="{% url 'login' %}" title="login">Login</a>
 			{% endif %}
+			<a id="special" href="{% url 'about' %}" title="About Developers">About</a>
+
 	
 </div>
 <div class="content">
 {% block content %}
 {% endblock content %}
 </div>
+{% block footer %}
+{% endblock footer %}
 </body>
 </html>
