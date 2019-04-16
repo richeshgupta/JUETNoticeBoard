@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum, JUET</title>
+	<style>
+		div.nav-container
+		{
+			margin-top:5px;
+			width:100%;
+			height:80px;
+			background-color:black;
+			border-radius:20px;
+		}
+		div.nav-btn
+		{
+			margin-left:100px;
+			background-color:white;
+			border-radius:20px;
+			width:100px;
+			height:20px;
+			margin-top:10px;
+			text-align: center;
+		}
+		a#link
+		{
+			width:100px;
+			height:50px;
+			display: inline-block;
+			border-radius:20px;
+			color:white;
+			text-decoration: none;
+			text-align: center;
+			margin-top:15px;
+			margin-left:50px;
+		}
+		a#link:hover
+		{
+			background-color: #90edcc;
+			color:black;
+		}
+		a#link:active
+		{
+			background-color: #90edcc;
+			color:black;
+		}
+		div.content
+		{
+			width:90%;
+
+			background-color: #071e22;
+			border-radius:20px;
+			padding:30px;
+			margin-top:100px;
+		}
+		h2
+		{
+			color:white;
+		}
+		a{
+			text-decoration: none;
+			color:white;
+		}
+		a:hover
+		{
+			text-decoration: underline;
+		}
+		h3
+		{
+			color:white;
+			margin-left:1350px;
+		}
+		h3#normal,h4
+		{
+			color:white;
+		}
+		hr
+		{
+			width:20%;
+			margin-left:20px;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+<div class="nav-container">
+		<a id="link" href="{% url 'home' %}">Home</a>
+		<a id="link" href="{% url 'forum-home' %}">Forum</a>
+		<a id="link" href="{% url 'login' %}">Login</a>
+		<a id="link" href="{% url 'logout' %}">Logout</a>
+</div>
+<div class="content">
+	{% if not kquery %}
+		<h2>No answers yet to show</h2>
+	{% else %}
+		{% for s in kquery %}
+			<h2>{{ s.notice_a }}</h2>
+			<h4>{{ s.date_a }}</h4>
+			<h3> Written by -{{ s.author_a }}</h3>
+			<hr>
+		{% endfor %}
+	{% endif %}
+</div>
+</body>
+</html>

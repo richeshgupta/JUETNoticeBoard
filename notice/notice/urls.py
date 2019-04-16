@@ -33,4 +33,5 @@ urlpatterns = [
     path('route/<int:pk>/delete/',notice_delete.as_view(),name="notice_delete"),
     path('/send/',include('send.urls')),
     path('about/',about,name='about'),
+    path('forum/',include('main.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -160,7 +160,8 @@
 			
 			<a id="normal" href="{% url 'home' %}" title="Home Page" class="link">Home</a>
 			<a id="normal" href="{% url 'menu' %}" title="Menu Page">Menu</a>
-			<a id="normal" href="{% url 'notice' %}" title="Notice post form">Post</a>
+			<a id="normal" href="{% url 'notice' %}" title="Notice post form">Notice</a>
+			<a id="normal" href="{% url 'forum-home' %}" title="Forum">Forum</a>
 			{% if user.is_authenticated %}
 				<a id="normal" href="{% url 'logout' %}" title="logout">Logout</a>
 			{% else %}

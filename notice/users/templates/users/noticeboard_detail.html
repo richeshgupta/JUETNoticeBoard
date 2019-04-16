@@ -153,6 +153,7 @@
 			<li><a id="normal" href="{% url 'home' %}" title="Home Page" class="link">Home</a></li>
 			<li><a id="normal" href="{% url 'menu' %}" title="Menu Page">Menu</a></li>
 			<li><a id="normal" href="{% url 'notice' %}" title="Notice post form">Post</a></li>
+			<li><a id="normal" href="{% url 'forum-home' %}" title="Forum">Forum</a></li>
 			{% if user.is_authenticated %}
 				<li><a id="normal" href="{% url 'logout' %}" title="logout">Logout</a></li>
 			{% else %}
