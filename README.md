@@ -11,6 +11,7 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 
 **DOCS**	: To provide any study material (Optional)
 
+![](images/Screenshot%20from%202019-04-17%2003-14-09.png)
 
 ***
  
