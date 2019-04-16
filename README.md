@@ -19,7 +19,7 @@ Django 	 	 = 2.0.7
 
 Python 	 	 = 3.6
 
-Crispy Forms = 1.1.0
+Crispy Forms = 1.7.2
 
 
 
