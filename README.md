@@ -10,7 +10,7 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 **URL**		: To provide any link to website (Optional)
 
 **DOCS**	: To provide any study material (Optional)
-![alt text]()
+![alt text](https://imgur.com/a/cgSObgI)
 
 ***
  
