@@ -7,11 +7,14 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 
 **DATE**	: Date and time of the post 
 
-**URL**	: To provide any link to website (Optional)
+**URL**		: To provide any link to website (Optional)
 
 **DOCS**	: To provide any study material (Optional)
+![alt text](https://imgur.com/a/cgSObgI)
+
+***
  
-## Requirements 
+## Requirements
 Django 	 	 = 2.0.7
 
 Python 	 	 = 3.6
