@@ -130,8 +130,8 @@ MEDIA_URL = '/media/'
 
 #Email - Integration
 STATIC_URL          = '/static/'
-LOGIN_REDIRECT_URL  = 'notice'
-LOGIN_URL           =  'login'
+LOGIN_REDIRECT_URL  = 'home'
+LOGIN_URL           = 'login'
 EMAIL_HOST          = 'smtp.gmail.com'
 EMAIL_PORT          =  587
 EMAIL_HOST_USER     = 'pantomath.notice@gmail.com'

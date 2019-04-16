@@ -4,7 +4,7 @@ from .forms import questionForm,answerForm
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 # Create your views here.
-class index_forum(ListView):
+class index_forum(ListView): 
 	model = question
 	template_name = 'main/index.html'
 	context_object_name = 'datas'
