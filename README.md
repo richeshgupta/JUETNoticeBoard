@@ -19,6 +19,7 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 **URL**		: To provide any link to website (Optional)
 
 **DOCS**	: To provide any study material (Optional)
+
 <img src="images/1.png" width="500" align="left" >
 
 ***
