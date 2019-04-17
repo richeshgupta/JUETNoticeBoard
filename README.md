@@ -66,3 +66,12 @@ Anyone who wants to answer the question can click on the question and the detail
 <img src="images/7.png">
 
 At the top there is a navigation panel from where you can be directed to the home page or login in from a different account.  
+
+
+<img src="images/8.png" width="500">
+
+* The above image shows the access hierarchy where **ADMIN** has all the rights who can add and delete any post.   
+
+* LoggedIn Users can only edit and elete any post which they have written.
+
+* Not LoggedIn users can only view the content but cannot do any changes in the post.
