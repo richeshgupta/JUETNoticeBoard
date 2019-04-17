@@ -43,11 +43,16 @@ Once you click on the faculty button a form will appear where you can signin usi
 
 <img src="images/4_2.png" width="500">
 
+
 * Forum : We will be explaining the forum feature later on.
 
-* About : Lastly if you want to contact us you can use our GitHub and LinkdIn id. 
+* About : Lastly if you want to contact us you can use our GitHub and LinkdIn id profiles. 
 
 ##  Detailed Post Features
-Whenever a faculty uploads a  new post, he can view the post by simply clicking on it. A new tab will be opened and a detailed description of the post will be shown here. The faculty member can also perform update and delete operarions on the post by just simply clicking on the buttons provided on the top right corner. A point to be noted here is that the admin who has uploded the post can only perform any changes to the post, in any other admin account the option of update and delete will not be shown. Once any changes are made in the post it will directly visible on the home page. 
+Whenever a faculty uploads a  new post, he can view the post by simply clicking on it. A new tab will be opened and a detailed description of the post will be shown here. The faculty member can also perform update and delete operarions on the post by just simply clicking on the buttons provided on the top right corner. A point to be noted here is that the admin who has uploded the post can only perform any changes to the post, in any other admin account the option of update and delete will not be shown. Once any changes are made in the post it will directly visible on the home page. A naviagtion panel is also provided here which performs differrent tasks like directing you to home page and introduction page, to add a new post or a forum and you can also logout from the admin account from here. 
 
 <img src="images/5_1.png" width="500">
+
+# Forum Feature
+This is the most fascinating feature of our Project. We have tried creating a place where new students who are facing any problem 
+can directly ask questions anything relevant to our college and anyone having a solution can answer it.   
