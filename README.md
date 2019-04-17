@@ -37,8 +37,8 @@ Once you click on the faculty button a form will appear where you can signin usi
 
 * Notice: This button will direct you the main form of the post. Here the faculty members can fill up the form accordingly and post it. The content will be posted on the home page and an email would also be sent to the registered email ids. 
 
+<img src="images/1.png" width="300" align="left" > <img src="images/4_1.png" width="400" align="right" >
 
-<img src="images/1.png" width="500" >
+**NOTE**: If you want to add your own email id you can do it by simply writing your email in space highlighted.
 
-<img src="images/3.png" width="800">
-
+<img src="images/4_2.png" width="500" >
