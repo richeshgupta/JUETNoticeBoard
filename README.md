@@ -64,3 +64,5 @@ can directly ask questions anything relevant to our college and anyone having a 
 Anyone who wants to answer the question can click on the question and the details of the question will be shown. There are different options at the bottom of the page like answer, show answers and delete answer. If you want to answer the question you can by clicking on the answer button and if you want to see all the related answers to the question you can view it by clicking on show answers button. The person who has aksed the question can delete the question also but if any other admin account wants to delete the question of other admin it is not possible and you will be directed to the login page. When you are answering the question a form appears in which you can answer any question by selecting it.
 
 <img src="images/7.png">
+
+At the top there is a navigation panel from where you can be directed to the home page or login in from a different account.  
