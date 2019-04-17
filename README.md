@@ -20,8 +20,6 @@ We, the Pantomath, have tried creating a project to solve the real-life problem 
 
 **DOCS**	: To provide any study material (Optional)
 
-<img src="images/1.png" width="500" >
-
 ***
 
 # Description of Project
@@ -32,12 +30,15 @@ The very first page that comes up is the introduction page. Here you can select 
 <img src="images/2.png" width="500" >
 
 ## Home Page
-Once you click on the faculty button a form will appear where you have can signin using your id and password which is provided in the file named **id-pass.txt**. Once you are signed in the home page will appear where  there are different options like:  
+Once you click on the faculty button a form will appear where you can signin using your id and password which is provided in the file named **id-pass.txt**. Once you are signed in the home page will appear where  there are different options like:  
 
 * Menu : On clicking on this buttton you will be redirected to the inroduction page where you have to again select wheather you want to login as faculty member or continue as student. If you again click on faculty button then a prompt box appears where you can directly select wheather you want to write a post, go to the home page or directly move to the forum.
 <img src="images/3_1.png" width="500">
 
-* 
+* Notice: This button will direct you the main form of the post. Here the faculty members can fill up the form accordingly and post it. The content will be posted on the home page and an email would also be sent to the registered email ids. 
+
+
+<img src="images/1.png" width="500" >
 
 <img src="images/3.png" width="800">
 
