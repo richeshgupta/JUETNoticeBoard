@@ -20,12 +20,17 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 
 **DOCS**	: To provide any study material (Optional)
 
-![](images/1.png)
+<img src="images/1.png" width="500" >
 
 ***
 
+# Description of Project
+
 ## Introduction Page
-The very first page that comes up is the introduction page. Here you can select wheather you are a faculty member or student. You can select either of the option and continue accordingly. 
+The very first page that comes up is the introduction page. Here you can select wheather you are a faculty member or student. You can select either of the option and continue accordingly. If you are a faculty meneber then you will be directed to the login page where you can **SignIn** and provide the content to the students by filling up the form.
+
+<img src="images/2.png" width="500" >
+
 
 
 
