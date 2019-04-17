@@ -37,3 +37,27 @@ def answer_detail(request,pk):
 	kquery = answer.objects.filter(ques = pk)
 	context = {'kquery':kquery}
 	return render(request,'main/detailanswer.html',context)
+
+class question_delete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+	model = question
+	success_url = '/forum/'
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author_q:
+			return True
+		else:
+			return False
+
+class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+	model = question
+	fields= ['title_q','notice_q','date_q','url_q']
+	context_object_name = 'form'
+	def form_valid(self,questionForm):
+		questionForm.instance.author_q = self.request.user
+		return super().form_valid(questionForm)
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author_q:
+			return True
+		else:
+			return False
