@@ -23,6 +23,7 @@ We, the Pantomath, have created this project to solve a real-life problem of our
 <img src="images/1.png" width="500" align="left" >
 
 ***
+
 # Description of Project
 
 ## Introduction Page
