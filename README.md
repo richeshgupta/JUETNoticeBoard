@@ -22,5 +22,10 @@ Python 	 	 = 3.6
 
 Crispy Forms = 1.7.2
 
+***
+
+## Introduction Page
+The very first page that comes up is the introduction page. Here you can select wheather you are a faculty member or student. You can select either of the option and continue accordingly. 
+
 
 
