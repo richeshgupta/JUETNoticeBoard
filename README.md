@@ -5,6 +5,8 @@
 
 * Crispy Forms = 1.7.2
 
+* Latest version of **Pip** 
+
 ***
 
 ## About Project
@@ -55,4 +57,10 @@ Whenever a faculty uploads a  new post, he can view the post by simply clicking 
 
 # Forum Feature
 This is the most fascinating feature of our Project. We have tried creating a place where new students who are facing any problem 
-can directly ask questions anything relevant to our college and anyone having a solution can answer it.   
+can directly ask questions anything relevant to our college and anyone having a solution can answer it.    
+
+<img src="images/6.png" width="500">
+
+Anyone who wants to answer the question can click on the question and the details of the question will be shown. There are different options at the bottom of the page like answer, show answers and delete answer. If you want to answer the question you can by clicking on the answer button and if you want to see all the related answers to the question you can view it by clicking on show answers button. The person who has aksed the question can delete the question also but if any other admin account wants to delete the question of other admin it is not possible and you will be directed to the login page. When you are answering the question a form appears in which you can answer any question by selecting it.
+
+<img src="images/7.png">
