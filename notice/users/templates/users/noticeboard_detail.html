@@ -47,13 +47,14 @@
 		{
 			width:77%;
 			margin-left:100px;
-			margin-top:4%;
+			margin-top:7%;
 			background-color:rgb(23,183,177);
 			color:rgb(12,56,77);
 			padding:50px;
 			border-radius:10px;
+			height:550px;
 		}
-		p.content
+		pre.content
 		{
 			font-weight: bold;
 			font-size: 1.5em;
@@ -79,9 +80,9 @@
 		{
 			width:80%;
 			background-color:rgb(23,183,177);
-			margin-top:15%;
 			margin-left:100px;
 			height:40px;
+			margin-top:50%;
 			padding-left:15px;
 			padding-top:10px;
 			border-radius:10px;
@@ -105,7 +106,7 @@
 		{
 			width:10%;
 			background-color:rgb(23,183,177);
-			margin-top:-250px;
+			margin-top:-750px;
 			border-radius:10px;
 			margin-left:75%;
 			padding-left:25px;
@@ -162,18 +163,23 @@
 	</ul>
 </div>
 {% block content-box %}
-	<div class="content-box">
-		<p class="content">{{ object.notice }}</p>
+	<div class="content-box"><br /><br />
+
+		<pre class="content">{{ object.notice }}</pre>
+		<br />
+		<br />
+		<br />
+		<br /><br />
+		<br />
 		{% if object.docs %}
 			<a href='{{ object.docs.url }}'>Attachment</a>
 		{% endif %}
-		<h3 class="author">Posted By- <u>{{ object.author }}</u></h3>
 		
 		{% if object.url %}
 			<br /><hr /><br />
-			<a href={{ object.url }} target="_blank"><h4>{{ object.url }}</h4></a>
+			Url - <a href={{ object.url }} target="_blank"><h4>{{ object.url }}</h4></a>
 		{% endif %}
-	</div>
+			</div>
 
 	{% if object.author == user %}
 		<div class="update-delete">
@@ -185,6 +191,7 @@
 {% block footer %}
 <div class="footer">
 	Created with &#10084; in <a href="https://www.juet.ac.in/" target="_blank" alt="Jaypee University of Engineering and Technology">JUET,Guna</a><span class="cred">A Project By <a href="{% url 'about' %}">Pantomath</span>
+
 </div>
 {% endblock footer %}	
 </body>
