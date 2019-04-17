@@ -1,0 +1,11 @@
+=====
+Faculty access id - 
+=====
+id - DummyFaculty
+pass - dummy12a
+
+=====
+Student Access id - 
+=====
+id - DummyStudent
+pass - dummy12a
