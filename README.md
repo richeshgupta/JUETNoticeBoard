@@ -8,7 +8,7 @@
 ***
 
 ## About Project
-We, the Pantomath, have created this project to solve a real-life problem of our faculty members of conveying information to the students. If any teacher wanted to convey any message to any batch then they first had to tell it to the Class Representative (CR) and then the CR would further convey it to the batch students. In this process there is a lot of information gap that leads to wrong analysis of the information. So, with our little knowledge about Web Development we tried to create one stop for students and faculty members that would let teachers directly post about anything and the students could get the information directly from here. The post would include: 
+We, the Pantomath, have tried creating a project to solve the real-life problem of our faculty members of conveying information to the students. If any teacher wanted to convey any message to any batch then they first had to tell it to the Class Representative (CR) and then the CR would further convey it to the batch students. In this process there is a lot of information gap that leads to wrong analysis of the information. So, with our little knowledge about Web Development we tried to create one stop for students and faculty members that would let teachers directly post about anything and the students could get the information directly from here. The post would include: 
 	
 **TITLE**	: Title of the Post (Required)
 
@@ -31,6 +31,13 @@ The very first page that comes up is the introduction page. Here you can select 
 
 <img src="images/2.png" width="500" >
 
+## Home Page
+Once you click on the faculty button a form will appear where you have can signin using your id and password which is provided in the file named **id-pass.txt**. Once you are signed in the home page will appear where  there are different options like:  
 
+* Menu : On clicking on this buttton you will be redirected to the inroduction page where you have to again select wheather you want to login as faculty member or continue as student. If you again click on faculty button then a prompt box appears where you can directly select wheather you want to write a post, go to the home page or directly move to the forum.
+<img src="images/3_1.png" width="500">
 
+* 
+
+<img src="images/3.png" width="800">
 
