@@ -47,15 +47,18 @@
 		div.content
 		{
 			width:90%;
-
+			color:white;
+			font-weight: bold;
 			background-color: #071e22;
 			border-radius:20px;
 			padding:30px;
 			margin-top:100px;
 		}
-		h2
+		pre
 		{
 			color:white;
+			font-size: 1.5em;
+			padding:60px;
 		}
 		a{
 			text-decoration: none;
@@ -73,6 +76,7 @@
 		h3#normal,h4
 		{
 			color:white;
+			margin-left:60px;
 		}
 		hr
 		{
@@ -80,6 +84,12 @@
 			margin-left:20px;
 			color:white;
 		}
+		a#link-content
+		{
+			font-weight: bold;
+			margin-left:60px;
+		}
+
 	</style>
 </head>
 <body>
@@ -94,7 +104,12 @@
 		<h2>No answers yet to show</h2>
 	{% else %}
 		{% for s in kquery %}
-			<h2>{{ s.notice_a }}</h2>
+			<pre>{{ s.notice_a }}</pre>
+			<br /><br />
+			{% if s.url_a %}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
+			{% endif %}
+
 			<h4>{{ s.date_a }}</h4>
 			<h3> Written by -{{ s.author_a }}</h3>
 			<hr>
