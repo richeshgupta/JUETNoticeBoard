@@ -1,3 +1,5 @@
 python == 3.6.7
 django == 2.10
 crispy forms = 1.7.2
+Latest version of Pip
+An active Net connection 
