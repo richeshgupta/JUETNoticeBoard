@@ -1,11 +1,11 @@
 =====
-Faculty access id - 
+Faculty access id : 
 =====
 id - DummyFaculty
 pass - dummy12a
 
 =====
-Student Access id - 
+Student Access id : 
 =====
 id - DummyStudent
 pass - dummy12a
