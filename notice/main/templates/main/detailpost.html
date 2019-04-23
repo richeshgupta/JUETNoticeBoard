@@ -124,7 +124,9 @@
 <br /><br /><br /><br /><br /><br />
 	<a href='{% url "create-ans" object.id %}' id="btn">Answer</a>
 	<a href='{% url "ans-detail" object.id %}' id="btn">Show answers</a>
-	<a href="{% url 'delete-ques' object.id %}" id="btn">Delete Question</a>
+	{% if object.author_q == user %}	
+		<a href="{% url 'delete-ques' object.id %}" id="btn">Delete Question</a>
+	{% endif %}
 </div>
 </body>
 </html>
