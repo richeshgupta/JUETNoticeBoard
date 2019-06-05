@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 from .views import PostCreate,forum_detail,ansCreate,answer_detail,question_delete,QuestionUpdate
-from .views import upvotes,downvotes
+from .views import upvotes,downvotes,AnswerUpdate,AnswerDelete
 urlpatterns= [
 	path('', views.index_forum.as_view(),name="forum-home"),
 	path('write/',PostCreate.as_view(template_name='main/forum_write.html'),name='write'),
@@ -15,4 +15,6 @@ urlpatterns= [
     path('update-ques/<int:pk>/',QuestionUpdate.as_view(),name='update-ques'),
     path('upvote/<int:pk>/',upvotes,name='upvote'),
     path('downvote/<int:pk>/',downvotes,name='downvote'),
+    path('update_ans/<int:pk>/',AnswerUpdate.as_view(),name='update-ans'),
+    path('delete_ans/<int:pk>/',AnswerDelete.as_view(),name='delete-ans'),
 ]

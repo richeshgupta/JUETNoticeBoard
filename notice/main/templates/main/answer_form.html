@@ -1,0 +1,32 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>|| Update answer ||</title>
+</head>
+<style>
+		div.forum
+		{
+			width:25%;
+			margin-left:35%;
+			margin-top:4%;
+			border:2px solid black;
+			padding:40px;
+		}
+	</style>
+<body>
+<div class="forum">
+	<h1>Update Answer</h1>
+	<form method='POST'>
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type='submit'>Update</button>
+	</form>
+	<br />
+	<a href="{% url 'forum-home' %}">Forum</a>
+	<br />
+	<a href="{% url 'logout' %}">Logout</a>
+</div>
+</body>
+</html>

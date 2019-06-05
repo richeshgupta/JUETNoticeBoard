@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 # Create your views here.
+
 class index_forum(ListView): 
 	model = question
 	template_name = 'main/index.html'
@@ -49,6 +50,16 @@ class question_delete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 		else:
 			return False
 
+class AnswerDelete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+	model  = answer
+	success_url = '/forum/'
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author_a:
+			return True
+		else:
+			return False
+
 class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 	model = question
 	fields= ['title_q','notice_q','date_q','url_q']
@@ -62,6 +73,21 @@ class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 			return True
 		else:
 			return False
+
+class AnswerUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+	model = answer
+	fields = ['notice_a','date_a','url_a','ques']
+	context_object_name = 'form'
+	def form_valid(self,answerForm):
+		answerForm.instance.author_a = self.request.user
+		return super().form_valid(answerForm)
+	def test_func(self):
+		test_case = self.get_object()
+		if self.request.user == test_case.author_a:
+			return True
+		else:
+			return False
+
 @login_required
 def upvotes(request,pk):
 	query = answer.objects.get(id = pk)

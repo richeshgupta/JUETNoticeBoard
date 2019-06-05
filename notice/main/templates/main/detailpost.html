@@ -110,8 +110,12 @@
 <div class="nav-container">
 		<a id="link" href="{% url 'home' %}">Home</a>
 		<a id="link" href="{% url 'forum-home' %}">Forum</a>
-		<a id="link" href="{% url 'login' %}">Login</a>
-		<a id="link" href="{% url 'logout' %}">Logout</a>
+		<a id="link" href="{% url 'write' %}">Ask Question</a>
+		{% if user.is_authenticated %}
+			<a id="link" href="{% url 'logout' %}">Logout</a>
+		{% else %}
+			<a id="link" href="{% url 'login' %}">Login</a>
+		{% endif %}
 </div>
 <div class="content">
 	<h1> {{ object.title_q }}</h1>
@@ -122,7 +126,7 @@
 		<a id="data-link" href={{ object.url_q }} target="_blank">{{ object.url_q }}</a>
 	{% endif %}
 <br /><br /><br /><br /><br /><br />
-	<a href='{% url "create-ans" object.id %}' id="btn">Answer</a>
+	<a href='{% url "create-ans" object.id %}' id="btn">Add Answer</a>
 	<a href='{% url "ans-detail" object.id %}' id="btn">Show answers</a>
 	<a href="{% url 'delete-ques' object.id %}" id="btn">Delete Question</a>
 </div>

@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Do you want to delete this Answer?</title>
+	<style>
+		body
+		{
+			background-color:black;
+			color:white;
+		}
+		a#btn-Yes
+		{
+			width:150px;
+			text-decoration:none;
+			color:red;
+			text-align: center;
+			background-color:white;font-size: 1.9em;
+			display: block;
+			margin:30px;
+		}
+		a#btn-No
+		{
+			width:150px;
+			text-decoration:none;
+			margin:30px;
+			display:block;
+			background-color:white;
+			color:black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<h1>Do you want to delete this answer ?</h1>
+<form method="POST" id="delete-form">
+
+			{{ form|crispy }}
+			{% csrf_token %}
+	 <div class="btn">
+	 <a href="javascript:{}" id="btn-Yes" onclick="document.getElementById('delete-form').submit();">Yes</a>
+	</form>
+	<a id="btn-No" href="{% url 'forum-home' %}"><h1>No</h1></a>
+</div>
+</body>
+</html>

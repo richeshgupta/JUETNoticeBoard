@@ -89,15 +89,24 @@
 			font-weight: bold;
 			margin-left:60px;
 		}
+		div.op
+		{
+			width:250px;
+			float:right;
+			color:#1b9977;
 
+		}
 	</style>
 </head>
 <body>
 <div class="nav-container">
 		<a id="link" href="{% url 'home' %}">Home</a>
 		<a id="link" href="{% url 'forum-home' %}">Forum</a>
-		<a id="link" href="{% url 'login' %}">Login</a>
-		<a id="link" href="{% url 'logout' %}">Logout</a>
+		{% if user.is_authenticated %}
+			<a id="link" href="{% url 'logout' %}">Logout</a>
+		{% else %}
+			<a id="link" href="{% url 'login' %}">Login</a>
+		{% endif %}
 </div>
 <div class="content">
 	{% if not kquery %}
@@ -109,7 +118,10 @@
 			{% if s.url_a %}
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
 			{% endif %}
-
+				<div class="op">
+					<a href="{% url 'update-ans' s.id %}">Update Answer</a><br />
+					<a href="{% url 'delete-ans' s.id %}">Delete Answer</a>
+				</div>
 			<h4>{{ s.date_a }}</h4>
 			{{s.upvotes}}<br />
 			<a href='{% url "upvote" s.id %}'>Upvote</a><br />
