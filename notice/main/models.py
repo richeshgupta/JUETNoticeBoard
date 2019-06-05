@@ -24,7 +24,7 @@ class answer(models.Model):
 	date_a = models.DateTimeField(default = timezone.now)
 	url_a = models.URLField(max_length=100,blank = True)
 	ques = models.ForeignKey(question,on_delete=models.CASCADE)
-	
+	upvotes = models.IntegerField(default = 0)
 	def __str__(self):
 		return self.notice_a
 	

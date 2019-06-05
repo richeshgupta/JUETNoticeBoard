@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import question,answer
 from .forms import questionForm,answerForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 # Create your views here.
@@ -61,3 +62,16 @@ class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 			return True
 		else:
 			return False
+@login_required
+def upvotes(request,pk):
+	query = answer.objects.get(id = pk)
+	query.upvotes+=1;
+	query.save();
+	return render(request,"main/upvoted.html",{})
+
+@login_required
+def downvotes(request,pk):
+	query = answer.objects.get(id = pk)
+	query.upvotes-=1;
+	query.save();
+	return render(request,"main/downvoted.html",{})

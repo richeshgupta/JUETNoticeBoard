@@ -111,6 +111,10 @@
 			{% endif %}
 
 			<h4>{{ s.date_a }}</h4>
+			{{s.upvotes}}<br />
+			<a href='{% url "upvote" s.id %}'>Upvote</a><br />
+
+			<a href='{% url "downvote" s.id %}'>Downvote</a>
 			<h3> Written by -{{ s.author_a }}</h3>
 			<hr>
 		{% endfor %}
