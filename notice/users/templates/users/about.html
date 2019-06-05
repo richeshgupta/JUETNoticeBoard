@@ -73,6 +73,10 @@
 			color:white;
 			text-align: center;
 		}
+		img.lnk:hover
+		{
+			transform:rotateZ(30deg); /*rotateY(30deg);*/
+		}
 		h2#name
 		{
 			font-size: 2em;
@@ -121,8 +125,8 @@
 	</div>		
 	<h3>Full Stack Developer</h3>
 <div class="links">
-	<a href="http://github.com/richeshgupta" target="_blank" alt="Richesh - GIT"><img src="{% static 'github.png' %}" width="110px" height="110px"></a>
-	<a href="https://www.linkedin.com/in/richeshgupta/" target="_blank" alt="Richesh - LinkedIn"><img src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" /></a>
+	<a href="http://github.com/richeshgupta" target="_blank" alt="Richesh - GIT"><img src="{% static 'github.png' %}" width="110px" height="110px" class='lnk'></a>
+	<a href="https://www.linkedin.com/in/richeshgupta/" target="_blank" alt="Richesh - LinkedIn"><img src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" class='lnk' /></a>
 </div>
 </div>
 <div class="profile-container">
@@ -133,8 +137,8 @@
 	</div>		
 	<h3>Backend Developer</h3>
 <div class="links">
-	<a href="https://github.com/satyam260" target="_blank" alt="Satyam - GIT"><img src="{% static 'github.png' %}" width="110px" height="110px"></a>
-	<a href="https://www.linkedin.com/in/satyam-upadhyay-1776a2172/" target="_blank" alt="Satyam - LinkedIn"><img src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" /></a>
+	<a href="https://github.com/satyam260" target="_blank" alt="Satyam - GIT"><img class='lnk' src="{% static 'github.png' %}" width="110px" height="110px"></a>
+	<a href="https://www.linkedin.com/in/satyam-upadhyay-1776a2172/" target="_blank" alt="Satyam - LinkedIn"><img class='lnk' src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" /></a>
 </div>
 </div>
 </body>
