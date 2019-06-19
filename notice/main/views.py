@@ -26,6 +26,7 @@ class PostCreate(LoginRequiredMixin,CreateView):
 		questionForm.instance.author_q = self.request.user
 		return super().form_valid(questionForm)
 
+
 class ansCreate(LoginRequiredMixin,CreateView):
 	model  = answer
 	fields = ['notice_a','date_a','url_a','ques']
@@ -36,7 +37,7 @@ class ansCreate(LoginRequiredMixin,CreateView):
 		return super().form_valid(answerForm)
 
 def answer_detail(request,pk):
-	kquery = answer.objects.filter(ques = pk)
+	kquery = answer.objects.filter(ques = pk).order_by('-upvotes')
 	context = {'kquery':kquery}
 	return render(request,'main/detailanswer.html',context)
 
