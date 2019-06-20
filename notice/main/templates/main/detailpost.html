@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Forum, JUET</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style>
 		div.nav-container
 		{
@@ -47,7 +48,7 @@
 		div.content
 		{
 			width:90%;
-
+			margin-left: 50px;
 			background-color: #071e22;
 			border-radius:20px;
 			padding:30px;
@@ -74,12 +75,7 @@
 		{
 			color:white;
 		}
-		hr
-		{
-			width:20%;
-			margin-left:20px;
-			color:white;
-		}
+		
 		h1,h4,p
 		{
 			color:white;
@@ -118,17 +114,19 @@
 		{% endif %}
 </div>
 <div class="content">
-	<h1> {{ object.title_q }}</h1>
-<p>Asked by -{{ object.author_q }}  </p>
+	<h1 class='text-success'> {{ object.title_q }}</h1>
+<h6 class='text-info'>Asked by - {{ object.author_q }}  </h6>
 <br /><br /><font color="white">Description :- </font><br /><br /><p id="centent-p">{{ object.notice_q }}</p>
 <br /><br /><br /><br /><br />
 	{% if object.url_q %}
 		<a id="data-link" href={{ object.url_q }} target="_blank">{{ object.url_q }}</a>
 	{% endif %}
-<br /><br /><br /><br /><br /><br />
-	<a href='{% url "create-ans" object.id %}' id="btn">Add Answer</a>
-	<a href='{% url "ans-detail" object.id %}' id="btn">Show answers</a>
-	<a href="{% url 'delete-ques' object.id %}" id="btn">Delete Question</a>
+<br /><br /><br/><br /><br /><br />
+	<div class='btn-group'>
+	<a href='{% url "create-ans" object.id %}' class='btn btn-outline-success'>Add Answer</a>
+	<a href='{% url "ans-detail" object.id %}' class='btn btn-outline-info'>Show answers</a>
+	<a href="{% url 'delete-ques' object.id %}" class="btn btn-outline-danger">Delete Question</a>
+</div>
 </div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Forum, JUET</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style>
 		div.nav-container
 		{
@@ -111,34 +112,42 @@
 		{% endif %}
 </div>
 	{% if not kquery %}
-		<div class="content">
-		<h2>No answers yet to show</h2>
+		<div class='card'>
+		<div class='card-body'>
+			<div class="content">
+			<h2>No answers yet to show</h2>
+			</div>
+		</div>
 		</div>
 	{% else %}
 		{% for s in kquery %}
-
-			<div class="content">
-			{% if s.author_a == user %}
-					<div class="op">
-						<a href="{% url 'update-ans' s.id %}">Update Answer</a><br />
-						<a href="{% url 'delete-ans' s.id %}">Delete Answer</a>
-					</div>
+			<div class='container-fluid'>
+				<div class="content">
+				{% if s.author_a == user %}
+						<div class="op">
+							<div class='btn-group'>
+							<a href="{% url 'update-ans' s.id %}" class='btn btn-outline-info'>Update Answer</a><br />
+							<a href="{% url 'delete-ans' s.id %}" class='btn btn-outline-danger'>Delete Answer</a>
+						</div>
+						</div>
+					{% endif %}
+					<h6 class='text text-danger'>{{ s.date_a }}</h6>
+				<pre>{{ s.notice_a }}</pre>
+				<br /><br />
+				{% if s.url_a %}
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
 				{% endif %}
-				<h4>{{ s.date_a }}</h4>
-			<pre>{{ s.notice_a }}</pre>
-			<br /><br />
-			{% if s.url_a %}
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
-			{% endif %}
-			<br />
-			<h3> Written by - {{ s.author_a }}</h3>
-			<hr>
-			{{s.upvotes}}<br />
-			
-			<a href='{% url "upvote" s.id %}'>Upvote</a>
-			<br />
-			<a href='{% url "downvote" s.id %}'>Downvote</a>
-			</div>
+				<br />
+				<h6 class='text text-info float-right'> Written by - {{ s.author_a }}</h6>
+				<hr>
+				{{s.upvotes}}<br /><br />
+				<div class='btn-group'>
+				<a href='{% url "upvote" s.id %}' class='btn btn-success'>Upvote</a>
+
+				<a href='{% url "downvote" s.id %}' class='btn btn-danger'>Downvote</a>
+				</div>
+				</div>
+		</div>
 		{% endfor %}
 	{% endif %}
 
