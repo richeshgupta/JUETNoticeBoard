@@ -1,8 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	{% block title %}
 	{% endblock title %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		body
 		{
@@ -32,7 +40,7 @@
 			margin-left:0px;
 			color:#bf07ac;
 		}
-		div.btn
+		div.bnt1
 		{
 			display:inline-block;
 			width:100px;
@@ -47,7 +55,7 @@
 			padding-top:8px;
 			margin-top:0px;
 		}
-		div.btn:hover
+		div.bnt1:hover
 		{
 
 			background-color:white;	
@@ -152,10 +160,7 @@
 	</style>
 </head>
 <body>
-	<div class="logbox">
-		{% block logbox %}
-		{% endblock %}
-	</div>
+	<!--
 <div class="main-container">
 			
 			<a id="normal" href="{% url 'home' %}" title="Home Page" class="link">Home</a>
@@ -169,7 +174,33 @@
 			<a id="special" href="{% url 'about' %}" title="About Developers">About</a>
 
 	
-</div>
+</div>-->
+
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #87CEFA"> 
+		<a href="{% url 'home' %}" class="navbar-brand">
+			<img src="{% static 'juet.jpg' %}" width="80" height="80">
+		</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>		
+		<div class="collapse navbar-collapse">
+			<ul class="nav nav-pills">
+				<li class="navbar-item active"><a href="{% url 'home' %}" class="nav-link"><h3><font color="#DC143C"><B>Home</B></font></h3></a></li>
+				<li class="navbar-item active"><a href="{% url 'notice' %}" class="nav-link"><h3><font color="#DC143C"><B>Notice</B></font></h3></a></li>
+				<li class="navbar-item active"><a href="{% url 'forum-home' %}" class="nav-link"><h3><font color="#DC143C"><B>Forum</B></font></h3></a></li>
+				{% if user.is_authenticated %}
+					<li class="navbar-item active"><a href="{% url 'logout' %}" class="nav-link"><h3><font color="#DC143C"><B>Logout</B></font></h3></a></li>
+				{% else %}
+					<li class="navbar-item active"><a href="{% url 'login' %}" class="nav-link"><h3><font color="#DC143C"><B>Login</B></font></h3></a></li>
+				{% endif %}
+				<li class="navbar-item active"><a href="{% url 'about' %}" class="nav-link"><h3><font color="#DC143C"><B>About</B></font></h3></a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="logbox">
+		{% block logbox %}
+		{% endblock %}
+	</div><br /><br />
 <div class="content">
 {% block content %}
 {% endblock content %}
