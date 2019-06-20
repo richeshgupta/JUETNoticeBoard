@@ -39,19 +39,31 @@
 </head> 
 <body>
 	{% if user.is_authenticated %}
-		
-	
-				<div class="main-head">
-			<h1>Already Logged in</h1>
+		<div class='jumbotron jumbotron-fluid bg-dark text-info'>
+			<center><h2>Already Logged in!</h2></center>
 		</div>
-		<div class="form">
-			Please <a href="{% url 'notice' %}">Write a post</a><br/><br />
-					<h3>Or</h3><br />
-					Go <a href="{% url 'home' %}">Home</a>
-					<h3>Or</h3><br />
-					Go to <a href="{% url 'forum-home' %}">Forum</a>
+		<div class='col-md-4 mx-auto'>
+		<div class='card mx'>
+			<div class='card-body mx-auto'>
+				<h2 class='text-danger'>
+					You are already Logged in!
+				</h2>
+				<hr >
+			</div>
+			<h6 class='text-muted mx-auto'>
+				You can go to -
+			</h6>
+			<div class='card-footer mx-auto'>
+				<div class='btn-group'>
+				<a href='{% url "logout" %}' class='btn btn-outline-danger'>Logout</a>
+				<a href='{% url "forum-home" %}' class='btn btn-outline-info'>Forum</a>
+				<a href='{% url "home" %}' class='btn btn-outline-success'>Home</a>
+				<a href='{% url "notice" %}' class='btn btn-outline-warning'>Create Notice</a>
+			</div>
+			</div>
+			<br />
 		</div>
-		</div>
+	</div>
 	{% else %}
 		<div class="form">
 		<form method ='POST'>

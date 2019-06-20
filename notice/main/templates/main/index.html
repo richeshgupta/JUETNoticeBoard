@@ -99,8 +99,7 @@
 			<h1><a href='{% url "forum_detail" data.id %}'>	{{ data.title_q }}</h1></a>
 		
 				<h4>{{ data.date_q}}</h4>
-				<h3>Asked By -{{ data.author_q }}</h3>
-			
+				<h3>Asked By - {{ data.author_q }}</h3>
 			</div>
 		{% endfor %}
 	{% else %}
