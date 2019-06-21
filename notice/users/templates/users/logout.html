@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		div.main{
-			margin-left:40%;
-			margin-top:10%;
-			text-align:center;
-			width:350px;
-			height:500px;
-			border:3px solid grey;
-			box-shadow:2px 2px 5px 5px grey;
-		}
-		div.logout-head
-		{
-			padding-top:20%	;
-		}
-		div.sub
-		{
-			padding-top:40%;
-		}
-	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Logged Out!</title>
 </head>
-<body>
-<div class="main">
-	<div class="logout-head">
-		<h1>Logged Out!</h1>
+<body>	
+		<div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
+			<h3 >You are Logged Out!</h3>
+		</div>
+		<div class='col-md-5 mx-auto mt-5'><br /><br />
+		<div class='card'>
+			<div class='card-body'>
+				<h3 class="text-muted">You are logged out!</h3>
+			</div>
+			<div class='card-footer'>
+				<div class='btn-group'>
+					<a href='{% url "login" %}' class='btn btn-success btn-lg'>Login</a>
+				<a href='{% url "signup" %}' class='btn btn-info btn-lg'>Signup</a>
+				</div>
+				<div class='btn-group float-right'>
+					<a href='{% url "home" %}' class='btn btn-warning btn-lg'>Home</a>
+					<a href='{% url "forum-home" %}' class='btn btn-dark btn-lg'>Forum</a>
+				</div>
+			</div>
+		</div>
+		</div>
 	</div>
-	<div class="sub">
-			<h3><a href="{% url 'login' %}">Login again</a></h3>
-			<h3><a href="{% url 'home' %}">Go to Home</a></h3>
-	</div>
-</div>
 </body>
 </html>

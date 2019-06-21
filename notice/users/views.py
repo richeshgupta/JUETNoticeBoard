@@ -89,3 +89,4 @@ def signup_view(request):
 	else:
 		form = UserCreationForm()
 	return render(request,'users/signup.html',{'form':form})
+
