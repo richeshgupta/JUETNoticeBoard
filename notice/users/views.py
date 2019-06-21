@@ -1,10 +1,14 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import Notice_board_class as NoticeBoardForm
+#from .forms import signup,UpdateUser
 from .models import NoticeBoard
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.core.mail import send_mail
+from django.contrib.auth import login as auth_login
+from django.contrib.auth.forms import UserCreationForm
+
 
 
 #Index page
@@ -62,3 +66,26 @@ def menu(request):
 	
 def about(request):
 	return render(request,'users/about.html',{})
+
+#User creation
+'''def signup_view(request):
+    if request.method == 'POST':
+        form = signup(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('home')
+    else:
+        form = signup()
+    return render(request, 'signup.html', {'form': form})'''
+
+def signup_view(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			username = form.cleaned_data.get('username')
+			form.save()
+			return redirect('home')
+	else:
+		form = UserCreationForm()
+	return render(request,'users/signup.html',{'form':form})

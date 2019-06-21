@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>|| Signup ||</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<body>
+<div class='jumbotron jumbotron-fluid bg-dark text-white'>
+	<center><h1 class='text text-info'>
+		Sign Up!
+	</h1></center>
+</div>
+<div class='container'>
+	<div class='col-md-6 mx-auto border border-primary rounded'>
+		<br /><br />
+		<form method='POST'>
+			{% csrf_token %}
+			{{ form|crispy }}
+
+			<button type='submit' class='btn btn-success'>Signup</button>
+		</form>
+		<hr>
+		<h5 class='text-muted'>
+			Already have an account?
+		</h5>
+		<a href='{% url "login" %}' class='btn btn-outline-info'>Login</a>
+		<br />
+		<br /><br />
+	</div>
+</div>
+</body>
+</html>

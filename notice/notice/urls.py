@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
 from users.views import menu,not_logged_in,index_list,notice_detail,PostCreate,PostUpdate,notice_delete
+from users.views import signup_view
 from users.views import about
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,4 +34,6 @@ urlpatterns = [
     path('route/<int:pk>/delete/',notice_delete.as_view(),name="notice_delete"),
     path('about/',about,name='about'),
     path('forum/',include('main.urls')),
+    path('signup/',signup_view,name='signup'),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

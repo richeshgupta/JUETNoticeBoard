@@ -65,16 +65,27 @@
 		</div>
 	</div>
 	{% else %}
-		<div class="form">
-		<form method ='POST'>
-		{% csrf_token %}
-		{{ form|crispy }}
-		<button type="submit">Login</button>
-		</form>
-		<br />
-		<a href="{% url 'home' %}">Home</a>
+		<br /><br />
+		<div class='col-md-4 mx-auto'>
+			<div class='card'>
+				<div class='card-body'>
+					<h3 class='text text-info'>
+						Login!
+					</h3>
+				</div>
+				<div class='card-footer'>
+					<form method="POST">
+					{% csrf_token %}
+					{{ form|crispy }}
+					<button type='submit' class='btn btn-outline-success'>Login</button>
+					</form><hr>
+					<h6 class='text-muted'>
+						Don't have an Account?
+					</h6>
+					<a href='{% url "signup" %}' class='btn btn-info'>Register</a>
+				</div>
+			</div>
 		</div>
-		
 	{% endif %}
 </body>
 </html>

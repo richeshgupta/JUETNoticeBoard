@@ -18,7 +18,6 @@ class question(models.Model):
 
 
 class answer(models.Model):
-	
 	author_a = models.ForeignKey(User, on_delete=models.CASCADE)
 	notice_a = models.TextField(max_length=1000,default='',unique = True)
 	date_a = models.DateTimeField(default = timezone.now)

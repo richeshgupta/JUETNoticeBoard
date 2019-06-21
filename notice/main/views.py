@@ -25,6 +25,7 @@ class PostCreate(LoginRequiredMixin,CreateView):
 	def form_valid(self,questionForm):
 		questionForm.instance.author_q = self.request.user
 		return super().form_valid(questionForm)
+	
 
 
 class ansCreate(LoginRequiredMixin,CreateView):
@@ -35,6 +36,7 @@ class ansCreate(LoginRequiredMixin,CreateView):
 	def form_valid(self,answerForm):
 		answerForm.instance.author_a = self.request.user
 		return super().form_valid(answerForm)
+
 
 def answer_detail(request,pk):
 	kquery = answer.objects.filter(ques = pk).order_by('-upvotes')
@@ -102,3 +104,5 @@ def downvotes(request,pk):
 	query.upvotes-=1;
 	query.save();
 	return render(request,"main/downvoted.html",{})
+
+# Creating User
