@@ -6,11 +6,11 @@
 	{% endblock title %}
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<style type="text/css">
 		body
 		{
@@ -176,15 +176,18 @@
 	
 </div>-->
 
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #87CEFA"> 
-		<a href="{% url 'home' %}" class="navbar-brand">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-warning sticky-top"> 
+		<a href="{% url 'menu' %}" class="navbar-brand">
 			<img src="{% static 'juet.jpg' %}" width="80" height="80">
 		</a>
-		<button type="button" class="navbar-toggler" data-toggle="collapse">
+		<span class="navbar-text"><a href="{% url 'about' %}" class="nav-link"><font color="Black"><h2><B>Pantomath</B></h2></font></a></span>
+		<button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" data-toggle="collapse" data-target="#collapse_target">
 			<span class="navbar-toggler-icon"></span>
-		</button>		
-		<div class="collapse navbar-collapse">
-			<ul class="nav nav-pills">
+		</button>
+
+		<div class="collapse navbar-collapse" id="collapse_target">	
+			
+			<ul class="nav justify-content-end">
 				<li class="navbar-item active"><a href="{% url 'home' %}" class="nav-link"><h3><font color="#DC143C"><B>Home</B></font></h3></a></li>
 				<li class="navbar-item active"><a href="{% url 'notice' %}" class="nav-link"><h3><font color="#DC143C"><B>Notice</B></font></h3></a></li>
 				<li class="navbar-item active"><a href="{% url 'forum-home' %}" class="nav-link"><h3><font color="#DC143C"><B>Forum</B></font></h3></a></li>
@@ -192,14 +195,12 @@
 					<li class="navbar-item active"><a href="{% url 'logout' %}" class="nav-link"><h3><font color="#DC143C"><B>Logout</B></font></h3></a></li>
 				{% else %}
 					<li class="navbar-item active"><a href="{% url 'login' %}" class="nav-link"><h3><font color="#DC143C"><B>Login</B></font></h3></a></li>
-						
-					<li class="navbar-item active"><a href="{% url 'signup' %}" class="nav-link"><h3><font color="#DC143C"><B>SignUp</B></font>
-					</h3></a></li>
 				{% endif %}
-				<li class="navbar-item active"><a href="{% url 'about' %}" class="nav-link"><h3><font color="#DC143C"><B>About</B></font></h3></a></li>
+
 			</ul>
 		</div>
 	</nav>
+
 	<div class="logbox">
 		{% block logbox %}
 		{% endblock %}

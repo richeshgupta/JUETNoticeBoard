@@ -9,7 +9,7 @@
 <body>
 	{% if user.is_authenticated %}
 		<div class='jumbotron jumbotron-fluid bg-dark text-info'>
-			<center><h2>Already Logged in!</h2></center>
+			<center><h2>Already Logged In!</h2></center>
 		</div>
 		<div class='col-md-4 mx-auto'>
 		<div class='card mx'>
@@ -19,9 +19,9 @@
 				</h2>
 				<hr >
 			</div>
-			<h6 class='text-muted mx-auto'>
+			<!--<h6 class='text-muted mx-auto'>
 				You can go to -
-			</h6>
+			</h6>-->
 			<div class='card-footer mx-auto'>
 				<div class='btn-group'>
 				<a href='{% url "logout" %}' class='btn btn-outline-danger'>Logout</a>
@@ -49,7 +49,7 @@
 					<button type='submit' class='btn btn-outline-success'>Login</button>
 					</form><hr>
 					<h6 class='text-muted'>
-						Don't have an Account?
+						Create a new account?
 					</h6>
 					<a href='{% url "signup" %}' class='btn btn-info'>Register</a>
 				</div>
