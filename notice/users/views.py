@@ -85,7 +85,7 @@ def signup_view(request):
 		if form.is_valid():
 			username = form.cleaned_data.get('username')
 			form.save()
-			return redirect('home')
+			return redirect('login')
 	else:
 		form = UserCreationForm()
 	return render(request,'users/signup.html',{'form':form})
