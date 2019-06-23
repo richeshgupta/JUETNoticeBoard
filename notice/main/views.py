@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 
-
 class index_forum(ListView): 
 	model = question
 	template_name = 'main/index.html'
@@ -105,4 +104,3 @@ def downvotes(request,pk):
 	query.save();
 	return render(request,"main/downvoted.html",{})
 
-# Creating User

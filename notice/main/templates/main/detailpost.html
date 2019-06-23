@@ -127,7 +127,7 @@
 	<a href='{% url "ans-detail" object.id %}' class='btn btn-outline-info'>Show answers</a>
 	{% if object.author_q == user %}
 		<a href="{% url 'delete-ques' object.id %}" class="btn btn-outline-danger">Delete Question</a>
-		<a href='{% url "update-ques" object.id %}' class='btn btn-outline-warning'>Update Question</a>
+		<a href='{% url "update-ques" object.id %}' class='btn btn-outline-warning'>Edit Question</a>
 	{% endif %}
 </div>	
 </body>
