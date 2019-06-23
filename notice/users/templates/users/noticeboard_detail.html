@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
 	{% block title %}
 	<title>{{ object.title }}</title>
 	{% endblock title %}
