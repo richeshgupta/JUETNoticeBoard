@@ -3,30 +3,32 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>||Forum question ||</title>
-	<style>
-		div.forum
-		{
-			width:25%;
-			margin-left:35%;
-			margin-top:4%;
-			border:2px solid black;
-			padding:40px;
-		}
-	</style>
+	<title>|| Ask Question ||</title>
+	
 </head>
 <body>
-<div class="forum">
-	<h1>Ask Question</h1>
+	<div class='jumbotron jumbotron-fluid bg-dark text-white text-center'>
+	<h1>Ask!</h1>
+</div>
+<div class='col-md-4 mx-auto border border-primary border-rounded'>
+	<br />
+	<h1 class='text text-info'>Ask!</h1><br />
+	<h5 class='text-danger'>Provide 2 tags that you find best suits your question</h5>
+	<br />
 	<form method='POST'>
 		{% csrf_token %}
 		{{ form|crispy }}
-		<button type='submit'>Post</button>
+		<button type='submit' class='btn btn-outline-success btn-lg'>Ask</button>
 	</form>
 	<br />
-	<a href="{% url 'forum-home' %}">Forum</a>
+	<div class="btn-group">
+	<a href="{% url 'forum-home' %}" class='btn btn-warning btn-lg'>Forum</a>
+	
+	<a href="{% url 'logout' %}" class='btn btn-info btn-lg'>Logout</a>
+	</div>
 	<br />
-	<a href="{% url 'logout' %}">Logout</a>
+	<br />
+	<br />
 </div>
 </body>
 </html>
