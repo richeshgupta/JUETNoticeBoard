@@ -125,8 +125,10 @@
 	<div class='btn-group'>
 	<a href='{% url "create-ans" object.id %}' class='btn btn-outline-success'>Add Answer</a>
 	<a href='{% url "ans-detail" object.id %}' class='btn btn-outline-info'>Show answers</a>
-	<a href="{% url 'delete-ques' object.id %}" class="btn btn-outline-danger">Delete Question</a>
-</div>
-</div>
+	{% if object.author_q == user %}
+		<a href="{% url 'delete-ques' object.id %}" class="btn btn-outline-danger">Delete Question</a>
+		<a href='{% url "update-ques" object.id %}' class='btn btn-outline-warning'>Update Question</a>
+	{% endif %}
+</div>	
 </body>
 </html>
