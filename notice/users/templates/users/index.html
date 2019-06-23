@@ -3,18 +3,18 @@
 {% block title %}
 <title>JUETNoticeBoard</title>
 {% endblock title %}
-{% block logbox %}
+<!--{% block logbox %}
 	{% if user.is_authenticated %}
 		<h4>Welcome, {{ request.user }} </h4>
 	{% else %}
 		<h4><a href="{% url 'login' %}" id="log">Log in</a> to post</h4>
 	{% endif %}
-{% endblock logbox %}
+{% endblock logbox %}-->
 {% block content %}
 	{% if data %}	
 		{% for datas in data %}
 			<a id="title" href="{% url 'notice_detail' datas.id %}"><h1>{{ datas.title }}</h1></a>
-			<h4 id="author">Posted By - <u>{{ datas.author }}</u></h4>
+			<h4 id="author">Posted By: <u>{{ datas.author }}</u></h4>
 			<h4>{{ datas.date }}</h4> <br /><hr >
 		{% endfor %}
 	{% else %}
