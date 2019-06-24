@@ -11,9 +11,10 @@
 				<table class='table table-dark'>
 					<thead>
 						<tr>
-							<th scope="col">Question</th>
+							<th scope="col">Questions</th>
 							<th scope="col">Date</th>
 							<th scope="col">Asked by</th>
+							<th scope='col'>Tags</th>
 						</tr>
 					</thead>
 					{% for data in datas %}
@@ -22,6 +23,7 @@
 							<th scope="row"><a class='text text-success' href='{% url "forum_detail" data.id %}'>{{ data.title_q }}</th></a>
 							<td>{{ data.date_q }}</td>
 							<td>{{ data.author_q }}</td>
+							<td>{{ data.tag1_q }} , {{ data.tag2_q }}</td>
 						</tr>
 					</tbody>
 					{% endfor %}
