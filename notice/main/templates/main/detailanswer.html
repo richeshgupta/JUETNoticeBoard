@@ -148,6 +148,10 @@
 				<a href='{% url "downvote" s.id %}' class='btn btn-danger'>Downvote</a>
 				<a href='{% url "report-a" s.id %}' class='btn btn-warning'>Report</a>
 				</div>
+				<br /><br /><br />
+				<h6 class='text text-white'>Tags:-</h6>
+				<k class='btn btn-info'>{{ s.tag1_a }}</k>
+				<k class='btn btn-info'>{{ s.tag2_a }}</k>
 				</div>
 		</div>
 		{% endfor %}
