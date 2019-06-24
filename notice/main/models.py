@@ -18,6 +18,8 @@ class question(models.Model):
 	def get_absolute_url(self):
 		return reverse('forum-home')
 
+	def rep(self):
+		return self.author_q
 
 class answer(models.Model):
 	author_a = models.ForeignKey(User, on_delete=models.CASCADE,)
@@ -34,3 +36,10 @@ class answer(models.Model):
 	def get_absolute_url(self):
 		return reverse('forum-home')
 
+class reportques(models.Model):
+	reported_q = models.ForeignKey(question,on_delete=models.CASCADE)
+	report_count = models.IntegerField(default=0)
+
+class reportans(models.Model):
+	reported_a = models.ForeignKey(answer,on_delete=models.CASCADE)
+	report_count = models.IntegerField(default=0)
