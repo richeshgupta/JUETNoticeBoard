@@ -1,35 +1,30 @@
 {% extends 'main/nav.html' %}
-{% load static %}
 {% block title %}
-	<title>Forum - Home</title>
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+<title>Profile</title>
 {% endblock title %}
 {% block content %}
-	<br /><br />
-	<div class='container mx-auto border'>
-			{% if not object %}
-				<table class='table table-dark'>
+	<div class='jumbotron bg-dark text-white text-center'>
+		<h2 class='text text-info'>{{ author }} - Profile</h2>
+	</div>
+	<div class='col-md-3 mx-auto ml-5'>
+		<table class='table table-dark'>
 					<thead>
 						<tr>
 							<th scope="col">Questions</th>
 							<th scope="col">Date</th>
-							<th scope="col">Asked by</th>
 							<th scope='col'>Tags</th>
 						</tr>
 					</thead>
-					{% for data in datas %}
+					{% for data in qquery %}
 					<tbody>
 						<tr>
 							<th scope="row"><a class='text text-success' href='{% url "forum_detail" data.id %}'>{{ data.title_q }}</th></a>
 							<td>{{ data.date_q }}</td>
-							<td><a href='{% url "profile" data.author_q.id %}' class='btn btn-outline-light'>{{ data.author_q }}</a></td>
 							<td><k class='btn btn-info'>{{ data.tag1_q }}</k> <k class='btn btn-info'> {{ data.tag2_q }}</k></td>
 						</tr>
 					</tbody>
 					{% endfor %}
-				</table>
-			{% else %}
-				<h2 class='text text-info'>Post a Question</h2>
-			{% endif %}
+		</table>
 	</div>
+		<br /><br />
 {% endblock content %}

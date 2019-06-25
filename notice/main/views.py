@@ -112,7 +112,7 @@ def reportq(request,pk):
 	except:
 		kquery = reportques(reported_q = query,report_count=1)
 	kquery.save();
-	return redirect('forum_detail',pk)
+	return render(request,"main/reported.html",{})
 
 @login_required
 def reporta(request,pk):
@@ -123,4 +123,13 @@ def reporta(request,pk):
 	except:
 		kquery = reportans(reported_a = query,report_count=1)
 	kquery.save();
-	return redirect('ans-detail',pk)
+	return render(request,"main/reported.html",{})
+
+@login_required
+def profile(request,pk):
+	aquery = answer.objects.filter(author_a = pk)
+	qquery = question.objects.filter(author_q = pk)
+	k  = answer.objects.filter(author_a = pk).first()
+	author = k.author_a
+	context = {'aquery':aquery,'qquery':qquery,'author':author}
+	return render(request,"main/profile.html",context)
