@@ -95,13 +95,13 @@ def upvotes(request,pk):
 	query = answer.objects.get(id = pk)
 	query.upvotes+=1;
 	query.save();
-	return redirect('ans-detail',pk)
+	return render(request,"main/upvoted.html",{})
 @login_required
 def downvotes(request,pk):
 	query = answer.objects.get(id = pk)
 	query.upvotes-=1;
 	query.save();
-	return redirect('ans-detail',pk)
+	return render(request,"main/downvoted.html",{})
 
 @login_required
 def reportq(request,pk):

@@ -23,7 +23,7 @@
 							<th scope="row"><a class='text text-success' href='{% url "forum_detail" data.id %}'>{{ data.title_q }}</th></a>
 							<td>{{ data.date_q }}</td>
 							<td>{{ data.author_q }}</td>
-							<td>{{ data.tag1_q }} , {{ data.tag2_q }}</td>
+							<td><k class='btn btn-info'>{{ data.tag1_q }}</k> <k class='btn btn-info'> {{ data.tag2_q }}</k></td>
 						</tr>
 					</tbody>
 					{% endfor %}
