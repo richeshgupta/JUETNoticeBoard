@@ -119,12 +119,16 @@
 	<a href='{% url "report-q" object.id %}' class='btn btn-outline-danger float-right'>Report</a>
 	<h1 class='text-success'> {{ object.title_q }}</h1>
 <h6 class='text-info'>Asked by - {{ object.author_q }}  </h6>
-<br /><br /><font color="white">Description :- </font><br /><br /><p id="centent-p">{{ object.notice_q }}</p>
+<br /><br /><font color="white">Description :- </font><br /><br/><p id="centent-p">{{ object.notice_q }}</p>
 <br /><br /><br /><br /><br />
 	{% if object.url_q %}
 		<a id="data-link" href={{ object.url_q }} target="_blank">{{ object.url_q }}</a>
 	{% endif %}
-<br /><br /><br/><br /><br /><br />
+	<h5 class='text-white'>Tags :-</h5><br />
+	<a class='btn btn-info'>{{ object.tag1_q }}</a>
+	<a class='btn btn-info'>{{ object.tag2_q }}</a>
+<br /><br /><br/><br />
+
 	<div class='btn-group'>
 	<a href='{% url "create-ans" object.id %}' class='btn btn-outline-success'>Add Answer</a>
 	<a href='{% url "ans-detail" object.id %}' class='btn btn-outline-info'>Show answers</a>
@@ -133,6 +137,5 @@
 		<a href='{% url "update-ques" object.id %}' class='btn btn-outline-warning'>Edit Question</a>
 	{% endif %}
 	</div>	
-
 </body>
 </html>
