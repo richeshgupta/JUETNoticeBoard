@@ -129,7 +129,7 @@ def reporta(request,pk):
 def profile(request,pk):
 	aquery = answer.objects.filter(author_a = pk)
 	qquery = question.objects.filter(author_q = pk)
-	k  = answer.objects.filter(author_a = pk).first()
-	author = k.author_a
+	k  = question.objects.filter(author_q = pk).first()
+	author = k.author_q
 	context = {'aquery':aquery,'qquery':qquery,'author':author}
 	return render(request,"main/profile.html",context)
