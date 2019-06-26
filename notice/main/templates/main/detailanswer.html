@@ -139,9 +139,9 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
 				{% endif %}
 				<br />
-				<h5 class='text text-info float-right'> Written by - {{ s.author_a }}</h5>
+				<h5 class='text text-info float-left'> Written by - {{ s.author_a }}</h5>
 				<hr>
-				{{s.upvotes}}<br /><br />
+				<a class='btn btn-dark float-right'>Upvotes - {{s.upvotes}}</a><br /><br />
 				<div class='btn-group float-right'>
 				<a href='{% url "upvote" s.id %}' class='btn btn-success'>Upvote</a>
 
