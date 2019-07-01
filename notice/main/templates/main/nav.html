@@ -23,24 +23,24 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="btn btn-info mx-2" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'forum-home' %}">Forum</a>
+        <a class="btn btn-info mx-2" href="{% url 'forum-home' %}">Forum</a>
       </li>
       <li class='nav-item'>
-      	<a class='nav-link' href='{% url "write" %}'>Ask</a>
+      	<a class='btn btn-info mx-2' href='{% url "write" %}'>Ask</a>
       </li>
       {% if user.is_authenticated %}
       	<li class='nav-item'>
-      		<a class='nav-link' href='{% url "logout" %}'>Logout</a>
+      		<a class='btn btn-danger mx-2' href='{% url "logout" %}'>Logout</a>
       	</li>
       {% else %}
       	<li class='nav-item'>
-      		<a class='nav-link' href='{% url "login" %}'>Login</a>
+      		<a class='btn btn-success mx-2' href='{% url "login" %}'>Login</a>
       	</li>
       	<li class='nav-item'>
-      		<a class="nav-link" href='{% url "signup" %}'>Signup</a>
+      		<a class="btn btn-success mx-2" href='{% url "signup" %}'>Signup</a>
       	</li>
       {% endif %}
     </ul>

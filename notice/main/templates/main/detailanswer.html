@@ -124,6 +124,7 @@
 		{% for s in kquery %}
 			<div class='container-fluid'>
 				<div class="content">
+					<h1 class='text text-light'><a href='{% url "forum_detail" s.id %}' class='text text-white bg-dark border border-info px-5'>{{ s.ques }}</a></h1><br />
 				{% if s.author_a == user %}
 						<div class="op">
 							<div class='btn-group'>
