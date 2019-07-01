@@ -4,7 +4,7 @@
 {% endblock title %}
 {% block content %}
 	<div class='jumbotron bg-dark text-white text-center'>
-		<h2 class='text text-info'>{{ author }} - Profile</h2>
+		<h2 class='text text-info'>{{ author }} -Profile</h2>
 	</div>
 	<div class='col-md-3 mx-auto ml-5'>
 		<table class='table table-dark'>
@@ -16,15 +16,21 @@
 						</tr>
 					</thead>
 					{% for data in qquery %}
+					{% if data %}
 					<tbody>
 						<tr>
 							<th scope="row"><a class='text text-success' href='{% url "forum_detail" data.id %}'>{{ data.title_q }}</th></a>
 							<td>{{ data.date_q }}</td>
-							<td><k class='btn btn-info'>{{ data.tag1_q }}</k> <k class='btn btn-info'> {{ data.tag2_q }}</k></td>
+							<td><k class='btn btn-info m-1'>{{ data.tag1_q }}</k> <k class='btn btn-info'> {{ data.tag2_q }}</k></td>
+
 						</tr>
 					</tbody>
+					{% else %}
+					<h2 class='text text-dark border border-light'>No Questions Asked till now</h2>
+					{% endif %}
 					{% endfor %}
 		</table>
 	</div>
 		<br /><br />
+		
 {% endblock content %}

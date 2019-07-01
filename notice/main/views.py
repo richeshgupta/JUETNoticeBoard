@@ -127,11 +127,9 @@ def reporta(request,pk):
 
 @login_required
 def profile(request,pk):
-	aquery = answer.objects.filter(author_a = pk)
 	qquery = question.objects.filter(author_q = pk)
-	k  = question.objects.filter(author_q = pk).first()
-	author = k.author_q
-	context = {'aquery':aquery,'qquery':qquery,'author':author}
+	author  = "User"
+	context = {'qquery':qquery,'author':author}
 	return render(request,"main/profile.html",context)
 
 def donate(request):
