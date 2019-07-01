@@ -20,7 +20,7 @@ class PostCreate(LoginRequiredMixin,CreateView):
 	model = question
 	fields= ['title_q','notice_q','date_q','url_q','tag1_q','tag2_q',]
 	context_object_name = 'form'
-	template_name = 'main/forum_write.html' 
+	template_name = 'main/forum_write.html'
 	def form_valid(self,questionForm):
 		questionForm.instance.author_q = self.request.user
 		return super().form_valid(questionForm)
@@ -125,7 +125,6 @@ def reporta(request,pk):
 	kquery.save();
 	return render(request,"main/reported.html",{})
 
-@login_required
 def profile(request,pk):
 	qquery = question.objects.filter(author_q = pk)
 	author  = "User"

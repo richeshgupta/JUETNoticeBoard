@@ -35,7 +35,6 @@
       	<li class='nav-item'>
       		<a class='btn btn-danger mx-2' href='{% url "logout" %}'>Logout</a>
       	</li>
-        
       {% else %}
       	<li class='nav-item'>
       		<a class='btn btn-success mx-2' href='{% url "login" %}'>Login</a>
@@ -45,9 +44,11 @@
       	</li>
       {% endif %}
     </ul>
+    {% if user.is_authenticated %}
     <h5 class='text text-dark mr-3'>
       Hello, <a class='btn btn-warning' href='{% url "profile" request.user.id %}'>{{ request.user }}</a>
     </h5>
+    {% endif %}
   </div>
 </nav><!-- nav bar finished -->
    
