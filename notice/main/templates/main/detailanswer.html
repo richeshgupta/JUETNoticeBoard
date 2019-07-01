@@ -1,10 +1,7 @@
+{% extends 'main/nav.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
+{% block title %}
 	<title>Deatailed Answer!</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
 	<style>
 		div.nav-container
 		{
@@ -99,19 +96,8 @@
 
 		}
 	</style>
-</head>
-<body>
-<div class="nav-container">
-		<a id="link" href="{% url 'home' %}">Home</a>
-		<a id="link" href="{% url 'forum-home' %}">Forum</a>
-		<a id="link" href="{% url 'write' %}">Ask Question</a>
-
-		{% if user.is_authenticated %}
-			<a id="link" href="{% url 'logout' %}">Logout</a>
-		{% else %}
-			<a id="link" href="{% url 'login' %}">Login</a>
-		{% endif %}
-</div>
+{% endblock title %}
+{% block content %}
 	{% if not kquery %}
 		<div class='card'>
 			<div class='card-body'>
@@ -157,6 +143,4 @@
 		</div>
 		{% endfor %}
 	{% endif %}
-
-</body>
-</html>
+{% endblock content %}
