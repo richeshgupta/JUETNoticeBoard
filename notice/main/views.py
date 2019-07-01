@@ -133,3 +133,6 @@ def profile(request,pk):
 	author = k.author_q
 	context = {'aquery':aquery,'qquery':qquery,'author':author}
 	return render(request,"main/profile.html",context)
+
+def donate(request):
+	return render(request,"main/donate.html",{})

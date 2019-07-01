@@ -1,0 +1,22 @@
+{% extends 'main/nav.html' %}
+{% load static %}
+{% block title %}
+<title>Please Donate</title>
+{% endblock title %}
+{% block content %}
+	<div class='col-md-7 mx-auto'>
+	<div class='card '>
+		<div class='card-body'>
+		<h2>Please Donate to help us continue this Not-For-Profit initiative</h2></div>
+		<div class='card-footer mx-auto'>
+			<h3 class='text-muted'>
+				Scan on your PayTM to Donate us. Even Rs.10 matters.
+			</h3>
+			<img src='{% static "qr.png" %}' />
+			<br />
+			<h3>Also write your name on message to let us know that you are our hero</h3>
+		</div>
+		</div>
+		</div>
+	</div>
+{% endblock content %}

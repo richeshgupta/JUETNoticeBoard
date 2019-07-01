@@ -111,6 +111,9 @@
 	<a href="{% url 'home' %}">Home</a>
 	</div>
 	<div class="nav-btn">
+	<a href="{{ request.META.HTTP_REFERER }}">Go back</a>
+	</div>
+	<div class="nav-btn">
 	<a href="https://facebook.com/richeshrocks">Contact us</a>
 	</div><div class="nav-btn">
 	<a href="https://github.com/richeshgupta/JUETNoticeBoard">Contribute</a>
