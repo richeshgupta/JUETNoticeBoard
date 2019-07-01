@@ -1,17 +1,8 @@
+{% extends 'main/nav.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
-</head>
-<body>
-	<div class='jumbotron jumbotron-fluid bg-dark text-white text-center'>
-	<h1>Ask!</h1>
-</div>
-<div class='col-md-4 mx-auto border border-primary border-rounded'>
-	<br />
+{% block content %}
+<div class='col-md-4 mx-auto border border-danger p-3'>
 	<h1 class='text text-info'>Ask!</h1><br />
 	<h5 class='text-danger'>Provide 2 tags that you find best describes your question</h5>
 	<br />
@@ -30,5 +21,5 @@
 	<br />
 	<br />
 </div>
-</body>
-</html>
+</div>
+{% endblock content %}

@@ -1,20 +1,16 @@
+{% extends 'main/nav.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+{% block title %}
 	<title>|| write answer ||</title>
-</head>
-
-<body>
+{% endblock title %}
+{% block content %}
 <div class='jumbotron jumbotron-fluid bg-dark text-white text-center'>
-	<h1>Answer!</h1>
+	<h1>Write Answer!</h1>
 </div>
 <div class='col-md-4 mx-auto border border-primary border-rounded'>
 	<br />
-	<h1 class='text text-info'>Answer!</h1><br />
+	<h1 class='text text-info'>Write Answer!</h1><br />
 	<h5 class='text-danger'>Provide 2 tags that you find best describes your answer</h5>
 	<br />
 	<form method='POST'>
@@ -32,5 +28,4 @@
 	<br />
 	<br />
 </div>
-</body>
-</html>
+{% endblock content %}

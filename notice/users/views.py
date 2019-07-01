@@ -3,12 +3,19 @@ from django.http import HttpResponse
 from .forms import Notice_board_class as NoticeBoardForm
 #from .forms import signup,UpdateUser
 from .models import NoticeBoard
-from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
+from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin,AccessMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.core.mail import send_mail
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import UserCreationForm
 
+
+class PostAuthenticate(AccessMixin):
+	def dispatch(self,request,*args,**kwargs):
+		if not request.user.is_staff:
+			fallacy(request)
+			return self.handle_no_permission()
+		return super(PostAuthenticate,self).dispatch(request,*args,**kwargs)
 
 
 #Index page
@@ -22,8 +29,9 @@ class index_list(ListView):
 class notice_detail(DetailView):
 	model = NoticeBoard
 
-class PostCreate(LoginRequiredMixin,CreateView):
+class PostCreate(LoginRequiredMixin,CreateView,PostAuthenticate):
 	model = NoticeBoard
+	permission_required = 'is_staff'
 	fields= ['title','notice','date','url','docs']
 	context_object_name = 'form'
 	def form_valid(self,NoticeBoardForm):
