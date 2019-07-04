@@ -4,6 +4,8 @@
 * Python 	 = 3.6
 
 * Crispy Forms = 1.7.2
+### Caution - 
+* This project was previously tested on Django 2.0.5 but due to sql migration bug of that version, we have officially shifted to Django 2.2.3 make sure you update django version in your machine
 
 ***
 
