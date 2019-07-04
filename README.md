@@ -1,5 +1,5 @@
 ## Requirements
-* Django 	 = 2.0.5
+* Django 	 = 2.2.3
 
 * Python 	 = 3.6
 
