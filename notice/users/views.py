@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import Notice_board_class as NoticeBoardForm
+from .forms import Notice_board_class as NoticeBoardForm,kk
 #from .forms import signup,UpdateUser
 from .models import NoticeBoard
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin,AccessMixin
@@ -85,16 +85,16 @@ def about(request):
             return redirect('home')
     else:
         form = signup()
-    return render(request, 'signup.html', {'form': form})'''
+    return render(request, 'signup.html', {'form': form} )'''
 
 def signup_view(request):
 	if request.method == 'POST':
-		form = UserCreationForm(request.POST)
+		form = kk(request.POST)
 		if form.is_valid():
 			username = form.cleaned_data.get('username')
 			form.save()
 			return redirect('login')
 	else:
-		form = UserCreationForm()
+		form = kk()
 	return render(request,'users/signup.html',{'form':form})
 
