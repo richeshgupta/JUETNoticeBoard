@@ -6,13 +6,14 @@
 	<div class='jumbotron bg-dark text-white text-center'>
 		<h2 class='text text-info'>{{ author }} -Profile</h2>
 	</div>
-	<div class='col-md-3 mx-auto ml-5'>
+	<div class='col-md-5 mx-auto ml-5'>
 		<table class='table table-dark'>
 					<thead>
 						<tr>
 							<th scope="col">Questions</th>
 							<th scope="col">Date</th>
 							<th scope='col'>Tags</th>
+							<th scope='col'>Asked By</th>
 						</tr>
 					</thead>
 					{% for data in qquery %}
@@ -22,7 +23,7 @@
 							<th scope="row"><a class='text text-success' href='{% url "forum_detail" data.id %}'>{{ data.title_q }}</th></a>
 							<td>{{ data.date_q }}</td>
 							<td><k class='btn btn-info m-1'>{{ data.tag1_q }}</k> <k class='btn btn-info'> {{ data.tag2_q }}</k></td>
-
+							<td>{{ data.author_q }}{% if data.author_q.is_staff %} (a) {% endif %}</td>
 						</tr>
 					</tbody>
 					{% else %}

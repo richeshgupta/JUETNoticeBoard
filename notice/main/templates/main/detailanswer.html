@@ -120,13 +120,13 @@
 						</div>
 					{% endif %}
 					<h6 class='text text-danger'>{{ s.date_a }}</h6>
-				<pre>{{ s.notice_a }}</pre>
+				<pre class='text text-light'>{{ s.notice_a }}</pre>
 				<br /><br />
 				{% if s.url_a %}
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a id="link-content" href="{{ s.url_a }}" target="_blank">{{ s.url_a }}</a><br /><br /><br /><br />
 				{% endif %}
 				<br />
-				<h5 class='text text-info float-left'> Written by - {{ s.author_a }}</h5>
+				<h5 class='text text-info float-left'> Written by - {{ s.author_a }}{% if s.author_a.is_staff %} (a) {% endif %}</h5>
 				<hr>
 				<a class='btn btn-dark float-right'>Upvotes - {{s.upvotes}}</a><br /><br />
 				<div class='btn-group float-right'>

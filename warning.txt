@@ -1,7 +1,7 @@
 THIS IS NOT A PRODUCTION READY APP.
 JUST A SIDE PROJECT.
 
-DO NOT EXPLOIT ANY BUGS AND INFORMATION I HAVE PROVIDED HERE.
+DO NOT EXPLOIT ANY INFORMATION I HAVE PROVIDED HERE.
 
 
 Thanks! feel free to contribute to the code if you feel something is off and can be improved.

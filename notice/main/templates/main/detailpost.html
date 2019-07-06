@@ -105,7 +105,7 @@
 
 	<a href='{% url "report-q" object.id %}' class='btn btn-outline-danger float-right'>Report</a>
 	<h1 class='text-success'> {{ object.title_q }}</h1>
-<h6 class='text-info'>Asked by - {{ object.author_q }}  </h6>
+<h6 class='text-info'>Asked by - {{ object.author_q }}{% if object.author_q.is_staff %} (a) {% endif %}  </h6>
 <br /><br /><font color="white">Description :- </font><br /><br/><p id="centent-p">{{ object.notice_q }}</p>
 <br /><br /><br /><br /><br />
 	{% if object.url_q %}

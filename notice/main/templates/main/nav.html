@@ -46,7 +46,7 @@
     </ul>
     {% if user.is_authenticated %}
     <h5 class='text text-dark mr-3'>
-      Hello, <a class='btn btn-warning' href='{% url "profile" request.user.id %}'>{{ request.user }}</a>
+      Hello, <a class='btn btn-warning' href='{% url "profile" request.user.id %}'>{{ request.user }}{% if request.user.is_staff %} (a) {% endif %}</a>
     </h5>
     {% endif %}
   </div>
