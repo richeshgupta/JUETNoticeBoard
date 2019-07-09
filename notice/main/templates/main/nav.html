@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	{% block title %}
 	{% endblock title %}
@@ -60,10 +60,17 @@
 	<div class='col'>
 	<footer>
 		<div class='jumbotron jumbotron-fluid bg-info text-white text-center'>
-			<h5>Created by <a href='{% url "about" %}' class='btn btn-danger'>PantoMath</a> with  ❤️</h5>
-      <br />
-      <span class='btn btn-dark'><h6>Please Help us cover our hosting costs - <a href='{% url "donate" %}' class='btn btn-danger'>Donate</a></h6></span>
-		</div>
+      <center><div class='container contaner-fluid m-3'>
+        <a class='btn btn-light p-2' href='{% url "faqs" %}'>FAQs</a>
+        <a class='btn btn-light p-2' href='{% url "guidelines" %}'>Community Guidelines</a>
+      </div></center>
+      <hr style='border-color:white;width:50%;margin-top:25px;margin-bottom:25px;'>
+			<div class='container'>
+        <h5>Created by <a href='{% url "about" %}' class='btn btn-danger'>PantoMath</a> with  ❤️</h5>
+        <br />
+        <span class='btn btn-dark'><h6>Please Help us cover our hosting costs - <a href='{% url "donate" %}' class='btn btn-danger'>Donate</a></h6></span>
+		  </div>
+    </div>
 	</footer>
 </div>
 </body>
