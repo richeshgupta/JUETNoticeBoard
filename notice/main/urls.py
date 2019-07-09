@@ -3,7 +3,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from .views import PostCreate,forum_detail,ansCreate,answer_detail,question_delete,QuestionUpdate
 from .views import upvotes,downvotes,AnswerUpdate,AnswerDelete
-from .views import reportq,reporta,profile,donate
+from .views import reportq,reporta,profile,donate,faqs,guidelines
 urlpatterns= [
 	path('', views.index_forum.as_view(),name="forum-home"),
 	path('write/',PostCreate.as_view(template_name='main/forum_write.html'),name='write'),
@@ -20,5 +20,7 @@ urlpatterns= [
     path('reporta/<int:pk>/',reporta,name='report-a'),
     path('profile/<int:pk>/',profile,name='profile'),
     path('donate/',donate,name='donate'),
+    path('faqs/',faqs,name='faqs'),
+    path('guidelines/',guidelines,name='guidelines'),
 
 ]

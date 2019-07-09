@@ -134,3 +134,9 @@ def profile(request,pk):
 
 def donate(request):
 	return render(request,"main/donate.html",{})
+
+def faqs(request):
+	return render(request,"main/faqs.html",{})
+
+def guidelines(request):
+	return render(request,"main/guidelines.html",{})
