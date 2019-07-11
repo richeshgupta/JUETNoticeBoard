@@ -1,14 +1,11 @@
+{% extends 'main/nav.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
-	
+{% block title %}	
 	<title>Login</title>
-</head> 
-<body>
+{% endblock title %}
+
+{% block content %}
 	{% if user.is_authenticated %}
 		<div class='jumbotron jumbotron-fluid bg-dark text-info'>
 			<center><h2>Already Logged In!</h2></center>
@@ -58,5 +55,4 @@
 			</div>
 		</div>
 	{% endif %}
-</body>
-</html>
+{% endblock content %}

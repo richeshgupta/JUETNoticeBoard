@@ -1,15 +1,10 @@
+{% extends 'main/nav.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>|| Signup ||</title>
-</head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<body>
+{% block title %}
+<title>SignUp</title>
+{% endblock title %}
+{% block content %}
 <div class='jumbotron jumbotron-fluid bg-dark text-white'>
 	<center><h1 class='text text-info'>
 		Sign Up!
@@ -33,5 +28,4 @@
 		<br /><br />
 	</div>
 </div>
-</body>
-</html>
+{% endblock content %}
