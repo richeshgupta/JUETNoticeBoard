@@ -25,7 +25,7 @@ SECRET_KEY = 'qlce-n9r(u*^5=d=r$3eewm(_6q(6^m40cn093p2_^r=(ncf7!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
