@@ -80,8 +80,8 @@ def signup_view(request):
 	if request.method == 'POST':
 		form = kk(request.POST)
 		if form.is_valid():
-			form.save()
 			username = form.cleaned_data.get('username')
+			form.save()
 			messages.success(request, f'Account Created for {username}!')
 			return redirect('login')
 	else:
