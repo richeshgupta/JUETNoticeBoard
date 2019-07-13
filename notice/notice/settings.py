@@ -25,7 +25,7 @@ SECRET_KEY = 'qlce-n9r(u*^5=d=r$3eewm(_6q(6^m40cn093p2_^r=(ncf7!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -125,8 +125,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#django_heroku.settings(locals())
 #Email - Integration
 STATIC_URL          = '/static/'
 LOGIN_REDIRECT_URL  = 'home'
