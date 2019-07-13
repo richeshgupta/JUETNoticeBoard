@@ -18,9 +18,6 @@
 				</h2>
 				<hr >
 			</div>
-			<!--<h6 class='text-muted mx-auto'>
-				You can go to -
-			</h6>-->
 			<div class='card-footer mx-auto'>
 				<div class='btn-group'>
 				<a href='{% url "logout" %}' class='btn btn-outline-danger'>Logout</a>
@@ -35,6 +32,13 @@
 	{% else %}
 		<br /><br />
 		<div class='col-md-4 mx-auto'>
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endif %}
 			<div class='card'>
 				<div class='card-body'>
 					<h3 class='text text-info'>

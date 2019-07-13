@@ -7,6 +7,7 @@ from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin,Ac
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.core.mail import send_mail
 from django.contrib.auth import login as auth_login
+from django.contrib import messages
 
 
 class PostAuthenticate(AccessMixin):
@@ -79,8 +80,9 @@ def signup_view(request):
 	if request.method == 'POST':
 		form = kk(request.POST)
 		if form.is_valid():
-			username = form.cleaned_data.get('username')
 			form.save()
+			username = form.cleaned_data.get('username')
+			messages.success(request, f'Account Created for {username}!')
 			return redirect('login')
 	else:
 		form = kk()
