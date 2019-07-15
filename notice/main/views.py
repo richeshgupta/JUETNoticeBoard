@@ -21,7 +21,6 @@ class answer_independent(DetailView):
 	model = answer
 	template_name = 'main/ans.html'
 
-
 class PostCreate(LoginRequiredMixin,CreateView):
 	model = question
 	fields= ['title_q','notice_q','date_q','url_q','tag1_q','tag2_q',]
@@ -31,21 +30,14 @@ class PostCreate(LoginRequiredMixin,CreateView):
 		questionForm.instance.author_q = self.request.user
 		return super().form_valid(questionForm)
 	
-
-
 class ansCreate(LoginRequiredMixin,CreateView):
 	model  = answer
-	fields = ['title_a','notice_a','date_a','url_a','ques','tag1_a','tag2_a',]
+	fields = ['title_a','notice_a','ques','date_a','url_a','tag1_a','tag2_a',]
 	context_object_name = 'form'
-	template_name = 'main/ans_write.html' 
+	template_name = 'main/ans_write.html'
 	def form_valid(self,answerForm):
 		answerForm.instance.author_a = self.request.user
 		return super().form_valid(answerForm)
-
-'''def answer_independent(request,pk):
-	kquery = answer.objects.filter(pk = id).first()
-	content = {'kquery':kquery}
-	return render(request,"main/ans.html",context)'''
 
 def answer_detail(request,pk):
 	kquery = answer.objects.filter(ques = pk).order_by('-upvotes')
@@ -88,7 +80,7 @@ class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 
 class AnswerUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 	model = answer
-	fields = ['notice_a','date_a','url_a','ques','tag1_a','tag2_a',]
+	fields = ['notice_a','date_a','url_a','tag1_a','tag2_a',]
 	context_object_name = 'form'
 	def form_valid(self,answerForm):
 		answerForm.instance.author_a = self.request.user
