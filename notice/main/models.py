@@ -41,8 +41,7 @@ class answer(models.Model):
 
 class reportques(models.Model):
 	reported_q = models.ForeignKey(question,on_delete=models.CASCADE)
-	report_count = models.IntegerField(default=0)
+	reported_by  = models.ForeignKey(User,on_delete = models.CASCADE)
 
 class reportans(models.Model):
 	reported_a = models.ForeignKey(answer,on_delete=models.CASCADE)
-	report_count = models.IntegerField(default=0)

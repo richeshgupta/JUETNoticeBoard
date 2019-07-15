@@ -20,6 +20,10 @@ class forum_detail(DetailView):
 class answer_independent(DetailView):
 	model = answer
 	template_name = 'main/ans.html'
+	def get_context_object(self,**kwargs):
+		self.answer.views+=1;
+		self.answer.save()
+		return super().get_context_object(**kwargs)
 
 class PostCreate(LoginRequiredMixin,CreateView):
 	model = question
@@ -66,7 +70,7 @@ class AnswerDelete(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 class QuestionUpdate(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 	model = question
-	fields= ['title_q','notice_q','date_q','url_q','tag1_q','tag2_q',]
+	fields= ['title_q','notice_q','ques','date_q','url_q','tag1_q','tag2_q',]
 	context_object_name = 'form'
 	def form_valid(self,questionForm):
 		questionForm.instance.author_q = self.request.user
@@ -109,10 +113,9 @@ def downvotes(request,pk):
 def reportq(request,pk):
 	query = question.objects.get(id = pk)
 	try:
-		kquery = reportques.objects.get(reported_q=query)
-		kquery.report_count+=1;
+		kquery = reportques.objects.get(reported_q=query,reported_by = request.user)
 	except:
-		kquery = reportques(reported_q = query,report_count=1)
+		kquery = reportques(reported_q = query,reported_by = request.user)
 	kquery.save();
 	return render(request,"main/reported.html",{})
 
@@ -121,9 +124,8 @@ def reporta(request,pk):
 	query = answer.objects.get(id = pk)
 	try:
 		kquery = reportans.objects.get(reported_a=query)
-		kquery.report_count+=1;
 	except:
-		kquery = reportans(reported_a = query,report_count=1)
+		kquery = reportans(reported_a = query)
 	kquery.save();
 	return render(request,"main/reported.html",{})
 
