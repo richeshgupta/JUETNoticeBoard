@@ -12,6 +12,7 @@ class question(models.Model):
 	url_q = models.URLField(max_length=100,blank = True,verbose_name="URL reference")
 	tag1_q = models.CharField(max_length=15,verbose_name="Tag 1")
 	tag2_q = models.CharField(max_length=15,verbose_name="Tag 2")
+	views = models.PositiveIntegerField(default = 0)
 	def __str__(self):
 		return self.title_q
 	
@@ -22,6 +23,7 @@ class question(models.Model):
 		return self.author_q
 
 class answer(models.Model):
+	title_a = models.CharField(max_length=100,verbose_name='Title of Answer')
 	author_a = models.ForeignKey(User, on_delete=models.CASCADE,)
 	notice_a = models.TextField(max_length=1500,default='',unique = True,verbose_name='Describe Answer')
 	date_a = models.DateTimeField(default = timezone.now,verbose_name='Date/Time')
@@ -30,6 +32,7 @@ class answer(models.Model):
 	upvotes = models.IntegerField(default = 0)
 	tag1_a = models.CharField(max_length=15,verbose_name='Tag 1')
 	tag2_a = models.CharField(max_length=15,verbose_name='Tag 2')
+	views = models.PositiveIntegerField(default=0)
 	def __str__(self):
 		return self.notice_a
 	

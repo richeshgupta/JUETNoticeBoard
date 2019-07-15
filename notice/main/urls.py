@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 from .views import PostCreate,forum_detail,ansCreate,answer_detail,question_delete,QuestionUpdate
 from .views import upvotes,downvotes,AnswerUpdate,AnswerDelete
 from .views import reportq,reporta,profile,donate,faqs,guidelines
+from .views import answer_independent as ans_in
 urlpatterns= [
 	path('', views.index_forum.as_view(),name="forum-home"),
 	path('write/',PostCreate.as_view(template_name='main/forum_write.html'),name='write'),
@@ -22,5 +23,6 @@ urlpatterns= [
     path('donate/',donate,name='donate'),
     path('faqs/',faqs,name='faqs'),
     path('guidelines/',guidelines,name='guidelines'),
+    path('ans_show/<int:pk>/',ans_in.as_view(),name='ans_show'),
 
 ]

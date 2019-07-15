@@ -4,9 +4,22 @@
 	<title>Forum - Home</title>
 	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
 {% endblock title %}
+{% block side-nav %}
+	<div class='col-md-3 mr-5 float-right'>
+		<div class='card'>
+			<div class='card-body'>
+				<h3>Trending</h3>
+			</div>
+			<div class='card-footer'>
+				<h4 class='text-muted'>Coming Soon</h4>
+			</div>
+		</div>
+	</div>
+{% endblock side-nav %}
 {% block content %}
 	<br /><br />
-	<div class='container mx-auto border'>
+<div class='col-md-7 ml-5'>
+	<div class='container pt-3 mx-auto border'>
 				<table class='table table-dark'>
 					<thead>
 						<tr>
@@ -29,4 +42,5 @@
 					{% endfor %}
 				</table>
 	</div>
+</div>
 {% endblock content %}

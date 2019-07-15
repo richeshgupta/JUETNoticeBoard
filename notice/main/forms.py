@@ -13,4 +13,4 @@ class answerForm(forms.ModelForm):
 	
 	class Meta: 
 		model = answer
-		fields= ['notice_a','date_a','url_a','ques','tag1_a','tag2_a',]
+		fields= ['title_a','notice_a','date_a','url_a','ques','tag1_a','tag2_a',]

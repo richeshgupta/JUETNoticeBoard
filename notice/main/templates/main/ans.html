@@ -1,0 +1,27 @@
+{% extends "main/nav.html" %}
+{% block title %}
+<title>{{object.title_a}}</title>
+{% endblock title %}
+{% block content %}
+		<div class='col-md-5 mx-auto'>
+			<div class='card'>
+				<div class='card-body ml-3'>
+					<h1 class='text-info'>{{ object.title_a }}</h1>
+					<h5 class='text-danger'>{{ object.date_a }}</h5>
+					<h6 class='text-success float-right'>Answerd by: {{object.author_a}}</h6>
+				</div>
+				<div class='card-footer'>
+					{{object.notice_a}}
+					{% if object.url_a %}
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Url - <a href="{{ object.url_a }}" target="_blank">{{ object.url_a }}</a><br /><br /><br /><br />
+				{% endif %}
+
+					<a class='btn btn-light float-right'>Upvotes - {{object.upvotes}}</a><br /><br />
+					<a href='{% url "upvote" object.id %}' class='btn btn-success'>Upvote</a>
+
+				<a href='{% url "downvote" object.id %}' class='btn btn-danger'>Downvote</a>
+				<a href='{% url "report-a" object.id %}' class='btn btn-danger float-right'>Report</a>
+				</div>
+			</div>
+		</div>
+{% endblock content %}
