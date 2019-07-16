@@ -1,157 +1,41 @@
+{% extends "main/nav.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>We are PantoMath!</title>
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
-	<style>
-		  @import url('https://fonts.googleapis.com/css?family=Satisfy');
-		body
-		{
-			  background: linear-gradient(to right, #136a8a, #267871);
-		}
-		div.nav
-		{
-			width:100%;
-			height:30px;
-			background-color: orange;
-			border-radius: 20px;
-		}
-		div.nav-btn
-		{
-			width:120px;
-			margin-right: 250px;
-			margin-top:1.5%;
-			border:3px solid orange;
-			float:right;
-			text-align: center;
-			border-bottom-right-radius: 20px;
-			border-bottom-left-radius: 20px;
-			background-color:orange;
-			border-bottom-style: solid;
-			border-bottom-color: white;
-			padding-bottom:5px;
-		}
-		a{
-			text-decoration: none;
-			color:white;
-			font-weight: bold;
-		}
-		div.profile-container
-		{
-			width:40%;
-			height:700px;
-			margin-top:150px;
-			display:inline-block;
-			margin-left:75px;
-		}
-		img#profile
-		{
-			width:370px;
-			height:370px;
-			border-radius:100%;
-			border:5px solid white;
-			margin-top:70px;
-			margin-left:200px;
-			
-		}
-		img#profile:hover
-		{
-			opacity:0.7;
-			transform:rotateY(30deg);
-			transition: all 2s;
-		}
-		img#profile:
-		div.content
-		{
-			width:50%;
-			float:right;
-			margin-top:-350px;
-			margin-right:300px;
-		}
-		h2,h3
-		{
-			color:white;
-			text-align: center;
-		}
-		img.lnk:hover
-		{
-			transform:rotateZ(30deg); /*rotateY(30deg);*/
-		}
-		h2#name
-		{
-			font-size: 2em;
-		}
-		div.links
-		{ 
-    		font-family: 'Satisfy', cursive;
-		    color:white;
-		    font-size:5em;
-		    width:35%;
-		    margin-left:250px;
-		}
-		a:hover
-		{
-			color:#bce6ff;
-		}
-		h1
-		{
-			color:white;
-			font-weight: bolder;
-			letter-spacing: 2.5px;
-			margin-left:100px;
-			margin-top: 100px;
-			font-size: 3em;
-		}
-		p.desc
-		{
-			font-size: 1.5em;
-			margin-left:100px;
-			color:white;
-			font-weight: bold;
-		}
-		</style>
-</head>
-<body>
-<div class="nav">
-	<div class="nav-btn">
-	<a href="{% url 'home' %}">Home</a>
-	</div>
-	<div class="nav-btn">
-	<a href="{{ request.META.HTTP_REFERER }}">Go back</a>
-	</div>
-	<div class="nav-btn">
-	<a href="https://facebook.com/richeshrocks">Contact us</a>
-	</div><div class="nav-btn">
-	<a href="https://github.com/richeshgupta/JUETNoticeBoard">Contribute</a>
-	</div>
+{% block title %}
+<title>PantoMath</title>
+<meta name='keywords' content='richesh,satyam,pantomath,forum,developers,juet,guna' />
+{% endblock title %}
+{% block content %}
 
-</div>
-<h1>We are PantoMath</h1>
-<p class='desc'>We are trying to provide not-for-profit solutions for all of the problems that we face in JUET,Guna. We are trying to empower engineers by providing them real life scenario of industry by creating products for our very own college and maintaining it all our own.</p>
-<div class="profile-container">
-
-<h2 id="name">Richesh Gupta</h2>
-	<div class="profile-img">
-		<img id="profile" src='{% static "richesh.png" %}'/>
-	</div>		
-	<h3>Full Stack Developer</h3>
-<div class="links">
-	<a href="http://github.com/richeshgupta" target="_blank" alt="Richesh - GIT"><img src="{% static 'github.png' %}" width="110px" height="110px" class='lnk'></a>
-	<a href="https://www.linkedin.com/in/richeshgupta/" target="_blank" alt="Richesh - LinkedIn"><img src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" class='lnk' /></a>
-</div>
-</div>
-<div class="profile-container">
-
-<h2 id="name">Satyam Upadhyay</h2>
-	<div class="profile-img">
-		<img id="profile" src='{% static "satyam.jpg" %}'/>
-	</div>		
-	<h3>Full Stack Developer</h3>
-<div class="links">
-	<a href="https://github.com/satyam260" target="_blank" alt="Satyam - GIT"><img class='lnk' src="{% static 'github.png' %}" width="110px" height="110px"></a>
-	<a href="https://www.linkedin.com/in/satyam-upadhyay-1776a2172/" target="_blank" alt="Satyam - LinkedIn"><img class='lnk' src="{% static 'linkedin.png' %}" style="border:5px solid white;border-radius:100%;" width="100px" height="100px" /></a>
+<div class='col-md-4 mr-5 float-right'>
+<div class='card'>
+	<div class='card-body'>
+		<h1 class='text text-success pl-3'>Satyam Upadhyay</h1>
+		<hr>
+		<img src='{% static "satyam.jpg" %}' width='550' height='530px' /><br><hr>
+		<h2 class='text text-info text-center'>Full Stack Developer</h2>
+	</div>
+	<div class='card-footer bg-dark'>
+		<center>
+			<a href='https://github.com/satyam260/' target='_blank'><img src='{% static "github.png" %}' width='100'></a>
+			<a href='https://www.linkedin.com/in/satyam-upadhyay-1776a2172/' target='_blank'><img src='{% static "linkedin.png" %}' width='100' class='border border-light rounded-circle m-2'></a>
+		</center>
+	</div>
 </div>
 </div>
-</body>
-</html>
+<div class='col-md-4 ml-5'>
+<div class='card ml-5'>
+	<div class='card-body'>
+		<h1 class='text text-success pl-3'>Richesh Gupta</h1>
+		<hr>
+		<img src='{% static "richesh.png" %}' /><br><hr>
+		<h2 class='text text-info text-center'>Full Stack Developer</h2>
+	</div>
+	<div class='card-footer bg-dark'>
+		<center>
+			<a href='https://github.com/richeshgupta/' target='_blank'><img src='{% static "github.png" %}' width='100'></a>
+			<a href='https://www.linkedin.com/in/richeshgupta/' target='_blank'><img src='{% static "linkedin.png" %}' width='100' class='border border-light rounded-circle m-2'></a>
+		</center>
+	</div>
+</div>
+</div>
+{% endblock content %}
