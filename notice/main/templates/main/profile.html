@@ -4,7 +4,8 @@
 {% endblock title %}
 {% block content %}
 	<div class='jumbotron bg-dark text-white text-center'>
-		<h2 class='text text-info'>{{ author }} -Profile</h2>
+		<h2 class='text text-info'>{{ author }} - Profile</h2>
+		<h5 class="text text-success float-right">Last login: {{author.last_login}}</h5>
 	</div>
 	<div class='col-md-5 mx-auto ml-5'>
 		<table class='table table-dark'>

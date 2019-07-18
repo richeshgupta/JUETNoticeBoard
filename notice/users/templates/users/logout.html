@@ -1,16 +1,11 @@
+{% extends "main/nav.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+{% block title %}
 	<title>Logged Out!</title>
-</head>
-<body>	
+{% endblock title %}
+{% block content %}
 		<div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
-			<h3 >You are Logged Out!</h3>
+			<h3 >You are Logged Out! </h3>
 		</div>
 		<div class='col-md-5 mx-auto mt-5'><br /><br />
 		<div class='card'>
@@ -30,5 +25,4 @@
 		</div>
 		</div>
 	</div>
-</body>
-</html>
+{% endblock content %}

@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins	import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from .models import reportques,reportans
+from django.contrib.auth.models import User
 
 class index_forum(ListView): 
 	model = question
@@ -131,8 +132,8 @@ def reporta(request,pk):
 
 def profile(request,pk):
 	qquery = question.objects.filter(author_q = pk)
-	author  = "User"
-	context = {'qquery':qquery,'author':author}
+	author = User.objects.get(id = pk)
+	context= {'qquery':qquery,'author':author}
 	return render(request,"main/profile.html",context)
 
 def donate(request):

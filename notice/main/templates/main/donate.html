@@ -4,7 +4,21 @@
 <title>Please Donate</title>
 {% endblock title %}
 {% block content %}
-	<div class='col-md-7 mx-auto'>
+<div class='jumbotron jumbotron-fluid bg-dark text-center text-light'>
+	{% if user.is_authenticated %}
+		<h1 class='text-success'>Hi {{request.user}}!, please sponsor our hosting costs</h1>
+	{% else %}
+	<h1 class="text-success">Hi user, please sponsor our hosting costs</h1>
+	{% endif %}
+</div>
+
+<div class='col-md-3 float-left'>
+	<div class='card'>
+		<div class="card-body text-center"><h3>YouTube tutorial</h3></div>
+		<div class="card-footer"><iframe width="420" height="315" src="https://www.youtube.com/embed/ossjXVPnxgE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	</div>
+</div>
+	<div class='col-md-5 mx-auto'>
 	<div class='card '>
 		<div class='card-body'>
 			<h2>Please Donate to help us continue this Not-For-Profit initiative.</h2>
