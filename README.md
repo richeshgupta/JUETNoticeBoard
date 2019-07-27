@@ -1,5 +1,5 @@
 # FORUM IS HOSTED ON - 
-	[ASKJUET.PYTHONANYWHERE.COM](http://askjuet.pythonanywhere.com)
+[ASKJUET.PYTHONANYWHERE.COM](http://askjuet.pythonanywhere.com)
 ## Requirements
 * Django 	 = 2.2.3
 
