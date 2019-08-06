@@ -1,6 +1,6 @@
-# FORUM IS HOSTED ON - 
+# FORUM IS HOSTED ON - :rocket:
 [ASKJUET.PYTHONANYWHERE.COM](http://askjuet.pythonanywhere.com)
-:+1: :metal:
+:+1: :metal: :tada:
 ## Requirements
 * Django 	 = 2.2.3
 
