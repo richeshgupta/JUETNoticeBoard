@@ -1,6 +1,8 @@
 # FORUM IS HOSTED ON - :rocket:
 [ASKJUET.PYTHONANYWHERE.COM](http://askjuet.pythonanywhere.com)
 :+1: :metal: :tada:
+## Note : -
+**Most of the authentication and security features are not pushed for security purposes, though it's live in production website**
 ## Requirements
 * Django 	 = 2.2.3
 
